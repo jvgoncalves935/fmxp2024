@@ -1,0 +1,77 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.root{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.content-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFFFF;
+    //padding-bottom: 128px;
+}
+
+.window{
+    width: auto;
+    height: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: #000000;
+}
+
+.window-header{
+    width: 100%;
+    height: 25px;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.window-content{
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
+.window-bottom{
+    width: 100%;
+    height: 10px;
+    background: #262626;
+}
+
+.window-border{
+    height: 100%;
+    width: 10px;
+    background: #262626;
+}
+
+.window-header-border{
+    max-width: 100%;
+    height: 25px;
+    flex: 1;
+}
+
+.expand{
+    flex-grow: 1;
+}

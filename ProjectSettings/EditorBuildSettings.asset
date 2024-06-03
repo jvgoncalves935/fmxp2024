@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/mara mara.unity
+    guid: 6a813a55b3c6a6a49b65485944a6a9ce
   m_configObjects: {}

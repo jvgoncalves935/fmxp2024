@@ -91,14 +91,18 @@ public class MenuPausa : MonoBehaviour
     }
 
 	public void TravarCursor(){
-        MouseOperations.TravarCursorMultiPlat();
-        MouseOperations.SetPosicaoCursorMultiPlat();
-        MouseOperations.SalvarPosicaoCursorMultiPlat();
+        #if UNITY_EDITOR || UNITY_STANDALONE_WIN
+            MouseOperations.TravarCursorMultiPlat();
+            MouseOperations.SetPosicaoCursorMultiPlat();
+            MouseOperations.SalvarPosicaoCursorMultiPlat();
+        #endif
     }
 
 	public void DestravarCursor(){
-        MouseOperations.DestravarCursorMultiPlat();
-        //mouseLook.UpdateCursorLock();
+        #if UNITY_EDITOR || UNITY_STANDALONE_WIN
+            MouseOperations.DestravarCursorMultiPlat();
+            //mouseLook.UpdateCursorLock();
+        #endif
     }
 
     public void PausarJogo(){
