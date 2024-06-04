@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TelaInicialController : MonoBehaviour{
-    [SerializeField] private Image imagemOuroboros;
-    [SerializeField] private Image imagemForceDev;
-    [SerializeField] private Image imagemCMS;
+    [SerializeField] private Image imagemKeyboardMouse;
+    [SerializeField] private Image imagemPolybius;
+    [SerializeField] private Image imagemPolybiusSeriesX;
+    [SerializeField] private Image imagemCM;
     [SerializeField] private ScenesData scenesData;
     [SerializeField] private InputNames inputNames;
     [SerializeField] private SceneLoader sceneLoader;
     [SerializeField] private AudioManager audioManager;
-    [SerializeField] private Text textTelaInicial;
+    [SerializeField] private TMP_Text textTelaInicial;
     public Dictionary<string, string> stringsTelaInicial;
     private string mensagem;
     private string bufferMensagem;
@@ -27,35 +29,58 @@ public class TelaInicialController : MonoBehaviour{
         VerificarScenesDataInstanciado();
         //FocarMouse();
         VerificarVideoPreload();
-        MusicaInicio();
+        textTelaInicial.gameObject.SetActive(false);
     }
 
     private IEnumerator IniciarCutscene(){
-        
-        StartCoroutine(FadeIn(imagemOuroboros,0.7f));
-        yield return new WaitForSeconds(0.7f);
-        yield return new WaitForSeconds(0.9f);
-        StartCoroutine(FadeOut(imagemOuroboros,0.7f));
-        yield return new WaitForSeconds(0.9f);
-        yield return new WaitForSeconds(0.8f);
-
-
-        StartCoroutine(FadeIn(imagemForceDev, 0.7f));
-        yield return new WaitForSeconds(0.7f);
-        yield return new WaitForSeconds(0.9f);
-        StartCoroutine(FadeOut(imagemForceDev, 0.7f));
-        yield return new WaitForSeconds(0.7f);
-        yield return new WaitForSeconds(0.9f);
-        
-        StartCoroutine(FadeIn(imagemCMS, 0.8f));
-        yield return new WaitForSeconds(0.8f);
+        KeyboardMouse();
         yield return new WaitForSeconds(1.0f);
-        StartCoroutine(FadeOut(imagemCMS, 0.8f));
-        yield return new WaitForSeconds(0.8f);
-        yield return new WaitForSeconds(1.0f);
+
+        PlayMusic("Polybius Series X1");
+        StartCoroutine(FadeIn(imagemPolybius, 0.4f));
+        yield return new WaitForSeconds(3.5f);
+        StartCoroutine(FadeOut(imagemPolybius, 0.3f));
+        StartCoroutine(FadeIn(imagemPolybiusSeriesX, 0.5f));
+        yield return new WaitForSeconds(5.0f);
+
+        StopMusic("Polybius Series X1");
+        imagemPolybiusSeriesX.color = new Color(1, 1, 1, 0);
+        yield return new WaitForSeconds(0.1f);
+        VaporSnakeLog();
+        yield return new WaitForSeconds(2.5f);
+
+        
+        yield return new WaitForSeconds(2.0f);
+        PlayMusic("R.E. (full)");
+        StartCoroutine(FadeIn(imagemCM, 1.2f));
+        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(3.0f);
+        StartCoroutine(FadeOut(imagemCM, 0.8f));
+        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(2.5f);
 
         SceneLoader.InstanciaSceneLoader.SetProximaCena("MenuPrincipal");
         GerenciadorCena.CarregarCena("Loading");
+    }
+
+    private void KeyboardMouse() {
+        StartCoroutine(KeyboardMouseCoroutine());
+    }
+
+    private IEnumerator KeyboardMouseCoroutine() {
+        yield return new WaitForSeconds(1.5f);
+        imagemKeyboardMouse.gameObject.SetActive(false);
+    }
+
+    private void VaporSnakeLog() {
+        StartCoroutine(VaporSnakeLogCoroutine());
+    }
+
+    private IEnumerator VaporSnakeLogCoroutine() {
+        textTelaInicial.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3.0f);
+        textTelaInicial.gameObject.SetActive(false);
+
     }
 
     private IEnumerator FadeIn(Image imagem, float tempoFinal){
@@ -157,8 +182,12 @@ public class TelaInicialController : MonoBehaviour{
         }
     }
 
-    public void MusicaInicio() {
-        AudioManager.InstanciaAudioManager.Play("R.E.");
+    public void PlayMusic(string music) {
+        AudioManager.InstanciaAudioManager.Play(music);
+    }
+
+    private void StopMusic(string music) {
+        AudioManager.InstanciaAudioManager.Stop(music);
     }
 
 }
