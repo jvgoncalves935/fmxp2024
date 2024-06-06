@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 
 public class PreloadController : MonoBehaviour
 {
@@ -7,6 +8,9 @@ public class PreloadController : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
+        ScenesData.InstanciaScenesData.AddScenesData("language", "en-US");
+
         SceneLoader.InstanciaSceneLoader.SetProximaCena("TelaInicial");
         GerenciadorCena.CarregarCena("TelaInicial");
     }

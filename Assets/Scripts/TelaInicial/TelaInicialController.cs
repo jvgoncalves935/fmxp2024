@@ -28,11 +28,14 @@ public class TelaInicialController : MonoBehaviour{
     {
         VerificarScenesDataInstanciado();
         //FocarMouse();
-        VerificarVideoPreload();
+        //VerificarVideoPreload();
+        StartCoroutine(IniciarCutscene());
         textTelaInicial.gameObject.SetActive(false);
+        imagemKeyboardMouse.gameObject.SetActive(false);
     }
 
     private IEnumerator IniciarCutscene(){
+        yield return new WaitForSeconds(1.3f);
         KeyboardMouse();
         yield return new WaitForSeconds(1.0f);
 
@@ -40,8 +43,8 @@ public class TelaInicialController : MonoBehaviour{
         StartCoroutine(FadeIn(imagemPolybius, 0.4f));
         yield return new WaitForSeconds(3.5f);
         StartCoroutine(FadeOut(imagemPolybius, 0.3f));
-        StartCoroutine(FadeIn(imagemPolybiusSeriesX, 0.5f));
-        yield return new WaitForSeconds(5.0f);
+        StartCoroutine(FadeIn(imagemPolybiusSeriesX, 0.3f));
+        yield return new WaitForSeconds(4.8f);
 
         StopMusic("Polybius Series X1");
         imagemPolybiusSeriesX.color = new Color(1, 1, 1, 0);
@@ -50,16 +53,17 @@ public class TelaInicialController : MonoBehaviour{
         yield return new WaitForSeconds(2.5f);
 
         
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(0.8f);
         PlayMusic("R.E. (full)");
         StartCoroutine(FadeIn(imagemCM, 1.2f));
         yield return new WaitForSeconds(1.2f);
         yield return new WaitForSeconds(3.0f);
         StartCoroutine(FadeOut(imagemCM, 0.8f));
         yield return new WaitForSeconds(1.2f);
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(1.5f);
 
         SceneLoader.InstanciaSceneLoader.SetProximaCena("MenuPrincipal");
+        SceneLoader.InstanciaSceneLoader.SetStopMusicOnLoading(true);
         GerenciadorCena.CarregarCena("Loading");
     }
 
@@ -68,7 +72,8 @@ public class TelaInicialController : MonoBehaviour{
     }
 
     private IEnumerator KeyboardMouseCoroutine() {
-        yield return new WaitForSeconds(1.5f);
+        imagemKeyboardMouse.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1.8f);
         imagemKeyboardMouse.gameObject.SetActive(false);
     }
 
@@ -78,7 +83,7 @@ public class TelaInicialController : MonoBehaviour{
 
     private IEnumerator VaporSnakeLogCoroutine() {
         textTelaInicial.gameObject.SetActive(true);
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(2.2f);
         textTelaInicial.gameObject.SetActive(false);
 
     }

@@ -152,7 +152,7 @@ public class CutsceneInicialController : MonoBehaviour
         IniciarPrimeiraFase();
     }
     private void IniciarPrimeiraFase() {
-        SceneLoader.InstanciaSceneLoader.SetProximaCena("Fase01");
+        SceneLoader.InstanciaSceneLoader.SetProximaCena("mara mara");
         //Debug.Log(SceneLoader.InstanciaSceneLoader.GetProximaCena());
         GerenciadorCena.CarregarCena("Loading");
     }

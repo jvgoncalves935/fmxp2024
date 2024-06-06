@@ -8,6 +8,7 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] public static GameObject instanciaSceneLoader;
 
     private string[] nomesCenas;
+    private bool shouldStopMusic = false;
     public static SceneLoader InstanciaSceneLoader {
         get {
             if(_instanciaSceneLoader == null) {
@@ -50,5 +51,13 @@ public class SceneLoader : MonoBehaviour
             }
         }
         return -1;
+    }
+
+    public void SetStopMusicOnLoading(bool stopMusic) {
+        shouldStopMusic = stopMusic;
+    }
+
+    public bool ShouldStopMusicOnLoading() {
+        return shouldStopMusic;
     }
 }

@@ -66,13 +66,13 @@ public class LoadingController : MonoBehaviour
         if(FindObjectOfType<SceneLoader>() == null) {
             Instantiate(sceneLoader);
             DontDestroyOnLoad(sceneLoader);
-            //Debug.Log("SceneData criado em EventHorizon");
-        } else {
-            //Debug.Log("SceneData anteriormente criado");
+            
         }
     }
 
     private void PararMusica() {
-        AudioManager.InstanciaAudioManager.StopMusicaAtual();
+        if(SceneLoader.InstanciaSceneLoader.ShouldStopMusicOnLoading()) {
+            AudioManager.InstanciaAudioManager.StopMusicaAtual();
+        }
     }
 }

@@ -713,7 +713,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 960, y: 540}
+  m_ReferenceResolution: {x: 720, y: 540}
   m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -804,7 +804,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 900, y: 160}
+  m_SizeDelta: {x: 650, y: 250}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1524881840
 MonoBehaviour:
@@ -827,7 +827,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\"Farmando XP Game Jam 2\"\r\nID: SLUS-71495\r\nMD5: ca2e8f5d60596803431388d03c5d87ec\r\n[checksum
-    ok]\r\n\r\nDRAM: 2MB\r\nGPU: 1MB, SPU: 512 KB\r\nROM: 512 KB \r\nNTSC-U "
+    ok]\r\n\r\nVapor Snake [Default]\nDRAM: 2MB\r\nGPU: 1MB, SPU: 512 KB\r\nROM:
+    512 KB \r\nNTSC-U\n\nDesktop, Keyboard/Mouse"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e31726856c448764190a129d8f55039a, type: 2}
   m_sharedMaterial: {fileID: -6999154835631146213, guid: e31726856c448764190a129d8f55039a, type: 2}
@@ -854,8 +855,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 17
+  m_fontSizeBase: 17
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -876,7 +877,7 @@ MonoBehaviour:
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
-  m_enableExtraPadding: 0
+  m_enableExtraPadding: 1
   checkPaddingRequired: 0
   m_isRichText: 1
   m_parseCtrlCharacters: 1

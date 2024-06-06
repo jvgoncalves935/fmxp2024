@@ -117,6 +117,10 @@ public class AudioManager : MonoBehaviour
         return indice;
     }
 
+    public bool IsPlayingMusic() {
+        return audioSourceMusicas.isPlaying;
+    }
+
     public void Play(string nome){
         int indice = Find(nome);
         if(indice == -1){

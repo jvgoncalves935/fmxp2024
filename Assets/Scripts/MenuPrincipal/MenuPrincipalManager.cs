@@ -9,6 +9,7 @@ public class MenuPrincipalManager : MonoBehaviour
 {
     [Header("Prefabs")]
     [SerializeField] private SceneLoader sceneLoader;
+    [SerializeField] private ScenesData scenesData;
     [SerializeField] private AudioManager audioManager;
 
     [Header("Botões Menu")]
@@ -41,7 +42,6 @@ public class MenuPrincipalManager : MonoBehaviour
         ToggleMenuPrincipal(true);
         DesfocarMouse();
         VerificarSceneLoaderInstanciado();
-        MusicaInicio();
         IniciarStrings();
     }
 
@@ -58,13 +58,15 @@ public class MenuPrincipalManager : MonoBehaviour
     }
 
     public void MusicaInicio() {
-        AudioManager.InstanciaAudioManager.Play("Flying Circus");
+        AudioManager.InstanciaAudioManager.Play("R.E. (full)");
     }
 
     public void VerificarSceneLoaderInstanciado() {
         if(FindObjectOfType<SceneLoader>() == null) {
             Instantiate(sceneLoader);
             Instantiate(audioManager);
+            Instantiate(scenesData);
+            MusicaInicio();
             //DontDestroyOnLoad(sceneLoader);
             //Debug.Log("SceneData criado em EventHorizon");
         } else {
@@ -111,6 +113,7 @@ public class MenuPrincipalManager : MonoBehaviour
     }
 
     private void CarregarCena() {
+        SceneLoader.InstanciaSceneLoader.SetStopMusicOnLoading(false);
         SceneLoader.InstanciaSceneLoader.SetProximaCena("CutsceneInicial");
         //Debug.Log(SceneLoader.InstanciaSceneLoader.GetProximaCena());
         GerenciadorCena.CarregarCena("Loading");
@@ -226,8 +229,12 @@ public class MenuPrincipalManager : MonoBehaviour
     }
 
     private void AlterarLinguagemSave() {
-        saveData.Linguagem = linguagemAtual;
-        //Debug.Log(saveData.Linguagem);
+        //saveData.Linguagem = linguagemAtual;
+        AlterarLinguagemSaveWeb();
+    }
+
+    private void AlterarLinguagemSaveWeb() {
+        scenesData.AddScenesData("language", linguagemAtual);
     }
 
     private void SalvarSaveOpcoes() {
@@ -237,7 +244,7 @@ public class MenuPrincipalManager : MonoBehaviour
     }
 
     public void FecharMenuOpcoes() {
-        SalvarSaveOpcoes();
+        //SalvarSaveOpcoes();
         IniciarStrings();
 
         //Debug.Log(linguagemAtual);
@@ -248,7 +255,7 @@ public class MenuPrincipalManager : MonoBehaviour
     }
 
     private void IniciarStrings() {
-        CarregarSaveOpcoes();
+        //CarregarSaveOpcoes();
         CarregarStrings();
         CarregarStringsLinguagens();
         CarregarLinguagemAtual();

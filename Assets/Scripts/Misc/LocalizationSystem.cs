@@ -31,8 +31,17 @@ public class LocalizationSystem{
         return _instancia;
     }
     public LocalizationSystem(){
-        SaveData saveData = SaveSystem.CarregarData();
-        _linguagemAtual = saveData.Linguagem;
+        //SaveData saveData = SaveSystem.CarregarData();
+        //_linguagemAtual = saveData.Linguagem;
+        LoadLanguageWeb();
+    }
+
+    private static void LoadLanguageWeb() {
+        _linguagemAtual = ScenesData.InstanciaScenesData.GetScenesData("languagem");
+        if(_linguagemAtual == null) {
+            _linguagemAtual = "en_US";
+            ScenesData.InstanciaScenesData.AddScenesData("languagem", "en_US");
+        }
     }
     public static string NomeArquivoCenaAtual(string idLinguagem, string cenaAtual){
         return PATH_LOCALIZATION+idLinguagem+"/"+cenaAtual;
@@ -75,7 +84,7 @@ public class LocalizationSystem{
     public static void IniciarInstanciaDictSaveData() {
         ApagarDicionario();
         GetInstance();
-        SaveData saveData = SaveSystem.CarregarData();
+        //SaveData saveData = SaveSystem.CarregarData();
     }
 
     public static string GetString(string chave, string cena){
