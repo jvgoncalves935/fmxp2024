@@ -5,18 +5,48 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="styles/index.css">
     <title>Vapor Snake - Polybius Series X Web Emulator [fmxp2024]</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="root">
       <div class="content-wrapper">
         <div class="header-container">
           <div class="header">
-            <img src="resources/Vapor Snake/romsarchive.png" alt="Roms Archive">
-            <div id="header-search">
-              <p>Search</p>
+            <div class="header-element">
+              <a href="https://romsarchive.net"><img src="resources/Vapor Snake/romsarchive.png" alt="Roms Archive"></a>
             </div>
-            <div class="header-button">
-              <p>Login</p>
+            <div class="header-element">
+              <div id="header-search">
+                <input
+                  name="q"
+                  defaultValue=""
+                  placeholder="Search..."
+                  id="search-form"
+                  required
+                />
+                <button type="button" onclick="" id="button-search">
+                  <a href="https://converting-minds.itch.io/fmxp2024">
+                    <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true" id="search-icon">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 4C6.91015 4 4 6.91015 4 10.5C4 14.0899 6.91015 17 10.5 17C14.0899 17 17 14.0899 17 10.5C17 6.91015 14.0899 4 10.5 4ZM2 10.5C2 5.80558 5.80558 2 10.5 2C15.1944 2 19 5.80558 19 10.5C19 15.1944 15.1944 19 10.5 19C5.80558 19 2 15.1944 2 10.5Z"></path>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M15.2929 15.2929C15.6834 14.9024 16.3166 14.9024 16.7071 15.2929L21.7071 20.2929C22.0976 20.6834 22.0976 21.3166 21.7071 21.7071C21.3166 22.0976 20.6834 22.0976 20.2929 21.7071L15.2929 16.7071C14.9024 16.3166 14.9024 15.6834 15.2929 15.2929Z"></path>
+                    </svg>
+                  </a>
+                </button> 
+              </div>
+            </div>
+            <div class="header-element-mini">
+              <button class="button-account" type="button" style="visibility: visible;">
+                <a href="https://romsarchive.net/account">
+                  <svg viewBox="0 0 50 50" focusable="false" aria-hidden="true" style="width: 22px; height: 22px;"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.75 8.33794C15.2982 8.33794 12.5 11.1394 12.5 14.5951C12.5 18.0508 15.2982 20.8522 18.75 20.8522C22.2018 20.8522 25 18.0508 25 14.5951C25 11.1394 22.2018 8.33794 18.75 8.33794ZM8.33334 14.5951C8.33334 8.83554 12.997 4.1665 18.75 4.1665C21.0951 4.1665 23.2592 4.94232 25.0002 6.25157C26.7406 4.94337 28.9065 4.1665 31.25 4.1665C37.003 4.1665 41.6667 8.83554 41.6667 14.5951C41.6667 20.3546 37.003 25.0237 31.25 25.0237C28.9061 25.0237 26.7405 24.2467 25.0002 22.9386C23.2592 24.2479 21.0951 25.0237 18.75 25.0237C12.997 25.0237 8.33334 20.3546 8.33334 14.5951ZM27.7788 19.7996C28.772 20.4654 29.9646 20.8522 31.25 20.8522C34.7018 20.8522 37.5 18.0508 37.5 14.5951C37.5 11.1394 34.7018 8.33794 31.25 8.33794C29.9643 8.33794 28.7719 8.7249 27.7788 9.39063C28.6616 10.9223 29.1667 12.6996 29.1667 14.5951C29.1667 16.4905 28.6616 18.2679 27.7788 19.7996ZM18.75 31.2808C12.9774 31.2808 8.33334 35.8531 8.33334 41.6458V41.6617H29.1667V41.6458C29.1667 35.8531 24.5226 31.2808 18.75 31.2808ZM33.3333 41.6617H41.6667V41.6458C41.6667 35.8531 37.0226 31.2808 31.25 31.2808C30.5219 31.2808 29.8274 31.3336 29.169 31.4413C31.7433 34.0494 33.3333 37.637 33.3333 41.6458V41.6617ZM24.8722 28.4351C23.0091 27.5826 20.9345 27.1094 18.75 27.1094C10.7155 27.1094 4.16667 33.5101 4.16667 41.6458V43.7475C4.16667 44.8994 5.09941 45.8332 6.25001 45.8332H43.75C44.9006 45.8332 45.8333 44.8994 45.8333 43.7475V41.6458C45.8333 33.5101 39.2845 27.1094 31.25 27.1094C29.0467 27.1094 26.8651 27.4902 24.8722 28.4351Z"></path></svg>
+                </a>
+              </button>
+              <div class="header-button">
+                <a href="https://romsarchive.net/login">
+                  <p>Login</p>
+                </a>
+              </div>
             </div>
           </div>
         </div>
