@@ -9,6 +9,17 @@
   <body>
     <div class="root">
       <div class="content-wrapper">
+        <div class="header-container">
+          <div class="header">
+            <img src="resources/Vapor Snake/romsarchive.png" alt="Roms Archive">
+            <div id="header-search">
+              <p>Search</p>
+            </div>
+            <div class="header-button">
+              <p>Login</p>
+            </div>
+          </div>
+        </div>
         <div class="window">
           <div class="window-header">
             <img src="resources/Vapor Snake/VS-window-name.png" alt="Vapor Snake Window" />
@@ -17,11 +28,12 @@
           </div>
           <div class="window-content">
             <div class="window-border"></div>
-              <canvas id="unity-canvas" width=960 height=540 tabindex="-1" style="background: #000000"></canvas>
+              <canvas id="unity-canvas" width=720 height=540 tabindex="-1" style="background: #000000"></canvas>
             <div class="window-border"></div>
           </div>
           <div class="window-bottom"></div>
         </div>
+        <div></div>
       </div>
       </canvas>
     </div>
@@ -51,7 +63,7 @@
         companyName: "Converting Minds",
         productName: "fmxp2024",
         productVersion: "0.1",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
     </script>

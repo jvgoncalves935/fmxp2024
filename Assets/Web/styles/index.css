@@ -2,6 +2,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
+    background: #09090b;
 }
 
 .root{
@@ -19,13 +20,78 @@ body, html {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background: #FFFFFF;
+    background: #09090b;
+    border: 8px solid #100e29;
+    box-sizing: border-box;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    gap: 32px;
     //padding-bottom: 128px;
 }
 
+.header-container{
+    width: 100%;
+    height: 64px;
+}
+
+.header{
+    width: 100%;
+    background: #100e29;
+    height: 64px;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-sizing: border-box;
+    padding-left: 64px;
+    padding-right: 64px;
+}
+
+#header-search{
+    width: 300px;
+    height: 64px;
+    border-radius: 30px;
+    fill: rgb(170, 173, 190);
+    height: 40px;
+    background-color: rgb(55, 57, 82);
+    border-color: transparent;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0px 0px;
+    font-family: Nunito, Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: rgb(170, 173, 190);
+    outline: 0px;
+    padding-left: 16px;
+}
+
+.header-button{
+    border-radius: 30px;
+    transition: all 250ms ease 0s;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    font-family: Nunito;
+    font-weight: 800;
+    font-size: 16px;
+    box-sizing: border-box;
+    padding: 8px 16px;
+    background: rgb(104, 66, 255);
+    color: rgb(249, 250, 255);
+    height: 40px;
+}
+
 .window{
-    width: auto;
-    height: 100%;
+    width: 820px;
+    height: 720px;
     display: flex;
     position: relative;
     flex-direction: column;
@@ -42,6 +108,10 @@ body, html {
     flex-direction: row;
     justify-content: start;
     align-items: center;
+}
+
+.window-header img{
+    background: #09090b;
 }
 
 .window-content{
@@ -68,6 +138,7 @@ body, html {
 
 .window-header-border{
     max-width: 100%;
+    min-width: 15%;
     height: 25px;
     flex: 1;
 }
