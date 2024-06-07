@@ -826,7 +826,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\"Farmando XP Game Jam 2\"\r\nID: SLUS-71495\r\nMD5: ca2e8f5d60596803431388d03c5d87ec\r\n[checksum
+  m_text: "\"Sparky Rush: Purrils in Pawsville!\"\r\nID: SLUS-71495\r\nMD5: ca2e8f5d60596803431388d03c5d87ec\r\n[checksum
     ok]\r\n\r\nVapor Snake [Default]\nDRAM: 2MB\r\nGPU: 1MB, SPU: 512 KB\r\nROM:
     512 KB \r\nNTSC-U\n\nDesktop, Keyboard/Mouse"
   m_isRightToLeft: 0

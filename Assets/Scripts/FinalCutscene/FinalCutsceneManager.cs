@@ -33,6 +33,9 @@ public class FinalCutsceneManager:MonoBehaviour
     private IEnumerator CrashGameStackOverflowCoroutine() {
         yield return new WaitForSeconds(5.0f);
 
+        #if UNITY_WEBGL
+            JavascriptAlert.Call();
+        #endif
         SaveData saveData = SaveSystem.CarregarData();
         Debug.Log("Game not crashed.");
     }

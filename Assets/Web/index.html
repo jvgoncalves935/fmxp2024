@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="styles/index.css">
-    <title>Vapor Snake - Polybius Series X Web Emulator [fmxp2024]</title>
+    <title>Vapor Snake - Polybius Series X Web Emulator [SPARKY]</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
                   required
                 />
                 <button type="button" onclick="" id="button-search">
-                  <a href="https://converting-minds.itch.io/fmxp2024">
+                  <a href="https://converting-minds.itch.io/SPARKY">
                     <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true" id="search-icon">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 4C6.91015 4 4 6.91015 4 10.5C4 14.0899 6.91015 17 10.5 17C14.0899 17 17 14.0899 17 10.5C17 6.91015 14.0899 4 10.5 4ZM2 10.5C2 5.80558 5.80558 2 10.5 2C15.1944 2 19 5.80558 19 10.5C19 15.1944 15.1944 19 10.5 19C5.80558 19 2 15.1944 2 10.5Z"></path>
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M15.2929 15.2929C15.6834 14.9024 16.3166 14.9024 16.7071 15.2929L21.7071 20.2929C22.0976 20.6834 22.0976 21.3166 21.7071 21.7071C21.3166 22.0976 20.6834 22.0976 20.2929 21.7071L15.2929 16.7071C14.9024 16.3166 14.9024 15.6834 15.2929 15.2929Z"></path>
@@ -68,7 +68,7 @@
       </canvas>
     </div>
     
-    <script src="Build/fmxp2024.loader.js"></script>
+    <script src="Build/SPARKY.loader.js"></script>
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
@@ -86,12 +86,12 @@
       }
 
       createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/fmxp2024.data.gz",
-        frameworkUrl: "Build/fmxp2024.framework.js.gz",
-        codeUrl: "Build/fmxp2024.wasm.gz",
+        dataUrl: "Build/SPARKY.data.gz",
+        frameworkUrl: "Build/SPARKY.framework.js.gz",
+        codeUrl: "Build/SPARKY.wasm.gz",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Converting Minds",
-        productName: "fmxp2024",
+        productName: "SPARKY",
         productVersion: "0.1",
         matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
