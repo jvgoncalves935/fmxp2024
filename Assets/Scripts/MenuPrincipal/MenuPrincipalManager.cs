@@ -114,7 +114,7 @@ public class MenuPrincipalManager : MonoBehaviour
 
     private void CarregarCena() {
         SceneLoader.InstanciaSceneLoader.SetStopMusicOnLoading(false);
-        SceneLoader.InstanciaSceneLoader.SetProximaCena("CutsceneInicial");
+        SceneLoader.InstanciaSceneLoader.SetProximaCena("Testing");
         //Debug.Log(SceneLoader.InstanciaSceneLoader.GetProximaCena());
         GerenciadorCena.CarregarCena("Loading");
     }

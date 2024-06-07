@@ -73,7 +73,7 @@ public class SaveSystem{
                 SaveUIController.InstanciaSaveUIController.MensagemSaveCorrompido();
                 SaveUIController.InstanciaSaveUIController.MensagemNovoSave();
             }
-            Debug.Log("Teste");
+            //Debug.Log("Teste");
             if(stream !=null) {
                 stream.Close();
             }
