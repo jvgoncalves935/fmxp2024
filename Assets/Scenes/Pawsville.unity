@@ -407,7 +407,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2013416492236557260, guid: 8a40d1162a4fbd94697bd13cd526179c, type: 3}
       propertyPath: nextLevelName
-      value: Pawsville
+      value: Mundanescape
       objectReference: {fileID: 0}
     - target: {fileID: 6936162733339450370, guid: 8a40d1162a4fbd94697bd13cd526179c, type: 3}
       propertyPath: m_Name
@@ -872,7 +872,7 @@ GameObject:
   - component: {fileID: 820714013}
   - component: {fileID: 820714014}
   m_Layer: 0
-  m_Name: PetsfarmManager
+  m_Name: PawsvilleManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -902,7 +902,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 820714012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d95fd7402dd24444798a48038751b572, type: 3}
+  m_Script: {fileID: 11500000, guid: 64192bdd779beba4ea19255d9a3275c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &874605735
