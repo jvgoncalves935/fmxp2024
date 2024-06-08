@@ -2,26 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, IDamageable, IEnemyStats
+public class Enemy3D : MonoBehaviour, IDamageable, IEnemyStats
 {
     protected bool killed = false;
     protected int damage;
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Start() {
+
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
+
     }
 
-    
+
     public void DamagePlayer(int enemyDamage) {
         if(!killed) {
-            PlayerController.InstanciaPlayerController.PlayerDamage(enemyDamage);
+            Player3D.Instance.PlayerDamage(enemyDamage);
         }
     }
 

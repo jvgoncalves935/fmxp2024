@@ -114,7 +114,7 @@ public class MenuPrincipalManager : MonoBehaviour
 
     private void CarregarCena() {
         SceneLoader.InstanciaSceneLoader.SetStopMusicOnLoading(false);
-        SceneLoader.InstanciaSceneLoader.SetProximaCena("Testing");
+        SceneLoader.InstanciaSceneLoader.SetProximaCena("Petsfarm");
         //Debug.Log(SceneLoader.InstanciaSceneLoader.GetProximaCena());
         GerenciadorCena.CarregarCena("Loading");
     }
