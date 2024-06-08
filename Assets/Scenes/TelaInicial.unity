@@ -828,7 +828,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\"Sparky Rush: Purrils in Pawsville!\"\r\nID: SLUS-71495\r\nMD5: ca2e8f5d60596803431388d03c5d87ec\r\n[checksum
     ok]\r\n\r\nVapor Snake [Default]\nDRAM: 2MB\r\nGPU: 1MB, SPU: 512 KB\r\nROM:
-    512 KB \r\nNTSC-U\n\nDesktop, Keyboard/Mouse"
+    512 KB\nResolution: 720x540 [Upscaled 320x240] \nNTSC-U\n\nDesktop, Keyboard/Mouse"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e31726856c448764190a129d8f55039a, type: 2}
   m_sharedMaterial: {fileID: -6999154835631146213, guid: e31726856c448764190a129d8f55039a, type: 2}
