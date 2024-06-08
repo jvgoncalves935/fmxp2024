@@ -8,7 +8,7 @@ public class TriggerExitLevel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<MeshRenderer>().enabled = false;
+        DisableMeshRenderer();
         CheckEmptyLevelName();
     }
 
@@ -18,20 +18,13 @@ public class TriggerExitLevel : MonoBehaviour
         
     }
 
-    public bool IsPlayerBody(Collider collider) {
-        if(collider.tag == "Player") {
-            return true;
-        }
-        return false;
-    }
-
     private void ExitLevel() {
         SceneLoader.InstanciaSceneLoader.SetProximaCena(nextLevelName);
         GerenciadorCena.CarregarCena("Loading");
     }
 
     private void OnTriggerEnter(Collider collider) {
-        if(IsPlayerBody(collider)) {
+        if(PlayerUtils.IsPlayerBody(collider)) {
             ExitLevel();
         }
     }
@@ -40,5 +33,9 @@ public class TriggerExitLevel : MonoBehaviour
         if(nextLevelName == null) {
             Debug.LogError("Next level name not defined!");
         }
+    }
+
+    private void DisableMeshRenderer() {
+        GetComponent<MeshRenderer>().enabled = false;
     }
 }

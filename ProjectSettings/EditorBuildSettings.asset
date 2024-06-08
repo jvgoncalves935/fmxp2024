@@ -24,10 +24,10 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuPausa.unity
     guid: f1a2541675cd722449962d6989a5ba09
   - enabled: 1
-    path: Assets/Scenes/FinalCutscene.unity
+    path: Assets/Scenes/Futurescape.unity
     guid: 2303bc0607bda08409ef685e258455f9
   - enabled: 1
-    path: Assets/Scenes/Testing.unity
+    path: Assets/Scenes/TestingProgramming.unity
     guid: d0708d3068016644ab8908f6d39c2b72
   - enabled: 1
     path: Assets/Scenes/MenuPrincipal.unity

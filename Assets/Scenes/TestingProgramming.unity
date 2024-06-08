@@ -957,7 +957,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2013416492236557260, guid: 8a40d1162a4fbd94697bd13cd526179c, type: 3}
       propertyPath: nextLevelName
-      value: FinalCutscene
+      value: Futurescape
       objectReference: {fileID: 0}
     - target: {fileID: 6936162733339450370, guid: 8a40d1162a4fbd94697bd13cd526179c, type: 3}
       propertyPath: m_Name

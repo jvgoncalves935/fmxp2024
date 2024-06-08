@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FinalCutsceneManager:MonoBehaviour
+public class FuturescapeManager: MonoBehaviour
 {
     public static GameObject instance;
-    private static FinalCutsceneManager _instance;
-    public static FinalCutsceneManager Instance {
+    private static FuturescapeManager _instance;
+    public static FuturescapeManager Instance {
         get {
             if(_instance == null) {
-                _instance = instance.GetComponent<FinalCutsceneManager>();
+                _instance = instance.GetComponent<FuturescapeManager>();
             }
             return _instance;
         }
     }
     void Awake() {
-        instance = FindObjectOfType<FinalCutsceneManager>().gameObject;
+        instance = FindObjectOfType<FuturescapeManager>().gameObject;
     }
 
     private void Start() {

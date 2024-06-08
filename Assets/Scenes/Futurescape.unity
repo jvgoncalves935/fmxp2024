@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 509171768}
   - component: {fileID: 509171769}
   m_Layer: 0
-  m_Name: FinalCutsceneManager
+  m_Name: FuturescapeManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
