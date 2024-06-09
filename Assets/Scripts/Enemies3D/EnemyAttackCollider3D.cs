@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyAttackCollider3D : MonoBehaviour
 {
     private EnemyAttackCollider3D attackCollider;
+    private Enemy3D enemy;
 
     void Start()
     {
@@ -18,12 +19,17 @@ public class EnemyAttackCollider3D : MonoBehaviour
     }
 
     private void InitColliderObjects() {
-        
+        enemy = transform.parent.GetComponent<Enemy3D>();
     }
 
     private void OnTriggerEnter(Collider collider) {
         if(PlayerUtils.IsPlayerBody(collider)){
-            Debug.Log("Enemy damage");
+            enemy.DamagePlayer();
         }
     }
+
+    public void RegisterAttack() {
+        
+    }
+
 }

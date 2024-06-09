@@ -6,6 +6,8 @@ public class Enemy3D : MonoBehaviour, IDamageable, IEnemyStats
 {
     protected bool killed = false;
     protected int damage;
+    protected int bodyDamage;
+    protected int attackDamage;
     // Start is called before the first frame update
     void Start() {
 
@@ -20,6 +22,12 @@ public class Enemy3D : MonoBehaviour, IDamageable, IEnemyStats
     public void DamagePlayer(int enemyDamage) {
         if(!killed) {
             Player3D.Instance.PlayerDamage(enemyDamage);
+        }
+    }
+
+    public void DamagePlayer() {
+        if(!killed) {
+            Player3D.Instance.PlayerDamage(attackDamage);
         }
     }
 
@@ -42,6 +50,14 @@ public class Enemy3D : MonoBehaviour, IDamageable, IEnemyStats
     public virtual void Attack() {
 
     }
+
+    private void OnCollisionEnter(Collision collision) {
+        if(EnemiesUtils.IsEnemyBody(collision) && !Player3D.Instance.IsPlayerHit()) {
+            DamagePlayer(bodyDamage);
+        }
+    }
+
+
 
 
 

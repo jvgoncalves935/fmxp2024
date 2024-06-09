@@ -756,8 +756,6 @@ MonoBehaviour:
   attackInitDuration: 0.2
   attackDelayDuration: 0.7
   isAttacking: 0
-  bodyHitDamage: 0
-  attackHitDamage: 0
 --- !u!65 &1411115045
 BoxCollider:
   m_ObjectHideFlags: 0

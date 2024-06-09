@@ -14,7 +14,7 @@ public class Player3D : MonoBehaviour
     [SerializeField] private float attackDelayDuration;
 
     [Header("Health Settings")]
-    [SerializeField] private HealthBar healthBar;
+    [SerializeField] private HealthBarPlayer3D healthBar;
     [SerializeField] private int coins = 0;
     [SerializeField] private int playerCurrentHealth = 100;
     [SerializeField] private float invencibilityTime = 1.0f;
@@ -41,6 +41,7 @@ public class Player3D : MonoBehaviour
     }
     void Awake() {
         instance = FindObjectOfType<Player3D>().gameObject;
+        playerFullHealth = playerCurrentHealth;
     }
     void Start()
     {
@@ -77,6 +78,7 @@ public class Player3D : MonoBehaviour
         Vector3 newPlayerPosition = new Vector3(x, y, z);
 
         ChangePlayerPosition(newPlayerPosition);
+        PlayerAddHealth(playerFullHealth);
     }
 
     private void ChangePlayerPosition(Vector3 newPosition) {
@@ -89,11 +91,36 @@ public class Player3D : MonoBehaviour
         }
     }
 
+    public bool IsPlayerHit() {
+        return isPlayerHit;
+    }
+
     private void InitPlayerObjects() {
         attackCollider = transform.Find("AttackCollider").gameObject.GetComponent<PlayerAttackCollider>();
         controller = GetComponent<ThirdPersonController>();
         animator = GetComponent<Animator>();
         meshRenderer = GetComponent<MeshRenderer>();
+    }
+
+    public int GetPlayerMaxHealth() {
+        return playerFullHealth;
+    }
+
+    public void RestartPlayer() {
+        playerKilled = false;
+        playerCurrentHealth = playerFullHealth;
+        isPlayerHit = false;
+        healthBar.SetHealth(playerCurrentHealth);
+    }
+
+    public void PlayerAddHealth(int amount) {
+        if(playerCurrentHealth + amount > playerFullHealth) {
+            playerCurrentHealth = playerFullHealth;
+        } else {
+            playerCurrentHealth += amount;
+        }
+
+        healthBar.SetHealth(playerCurrentHealth);
     }
 
     private IEnumerator PlayerAttackCoroutine() {

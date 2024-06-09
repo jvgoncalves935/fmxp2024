@@ -14,4 +14,11 @@ public static class EnemiesUtils
         }
         return false;
     }
+
+    public static bool IsEnemyBody(Collision collision) {
+        if(collision.gameObject.tag == "Enemy") {
+            return true;
+        }
+        return false;
+    }
 }

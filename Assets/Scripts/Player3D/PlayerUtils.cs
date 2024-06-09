@@ -10,4 +10,11 @@ public static class PlayerUtils
         }
         return false;
     }
+
+    public static bool IsPlayerBody(Collision collision) {
+        if(collision.gameObject.tag == "Player") {
+            return true;
+        }
+        return false;
+    }
 }

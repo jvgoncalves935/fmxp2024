@@ -7,9 +7,15 @@ public class EnemyRobotDog : Enemy3D
     [SerializeField] private float attackInitDuration;
     [SerializeField] private float attackDelayDuration;
     [SerializeField] private bool isAttacking = false;
+    [SerializeField] private int bodyHitDamage;
+    [SerializeField] private int attackHitDamage;
 
     private EnemyAttackCollider3D attackCollider;
     // Start is called before the first frame update
+    private void Awake() {
+        SetBaseDamage(attackHitDamage);
+    }
+
     void Start()
     {
         InitRobotDogObjects();
@@ -61,5 +67,10 @@ public class EnemyRobotDog : Enemy3D
         if(!isAttacking) {
             RobotDogAttack();
         }
+    }
+
+    public override void SetBaseDamage(int damage) {
+        bodyDamage = bodyHitDamage;
+        attackDamage = attackHitDamage;
     }
 }
