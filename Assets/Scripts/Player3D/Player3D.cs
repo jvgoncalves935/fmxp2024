@@ -27,7 +27,7 @@ public class Player3D : MonoBehaviour
     private PlayerAttackCollider attackCollider;
     private ThirdPersonController controller;
     private Animator animator;
-    private MeshRenderer meshRenderer;
+    private SkinnedMeshRenderer meshRenderer;
 
     public static GameObject instance;
     private static Player3D _instance;
@@ -99,7 +99,7 @@ public class Player3D : MonoBehaviour
         attackCollider = transform.Find("AttackCollider").gameObject.GetComponent<PlayerAttackCollider>();
         controller = GetComponent<ThirdPersonController>();
         animator = GetComponent<Animator>();
-        meshRenderer = GetComponent<MeshRenderer>();
+        meshRenderer = transform.Find("Geometry/Armature_Mesh").GetComponent<SkinnedMeshRenderer>();
     }
 
     public int GetPlayerMaxHealth() {
@@ -204,4 +204,5 @@ public class Player3D : MonoBehaviour
         isPlayerHit = true;
         playerCurrentHealth = 0;
     }
+
 }
