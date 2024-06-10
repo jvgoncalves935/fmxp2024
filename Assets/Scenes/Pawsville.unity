@@ -1512,6 +1512,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthBarPlayer3D
       objectReference: {fileID: 0}
+    - target: {fileID: 6259161544083126626, guid: a730ce946c92fbf45993a6a87434fee5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 21c04e4de889a19498cd837c257dc0ad, type: 3}
     - target: {fileID: 8242928112913470794, guid: a730ce946c92fbf45993a6a87434fee5, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
