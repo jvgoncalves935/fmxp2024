@@ -25,6 +25,7 @@ public class HealthBarPlayer3D : MonoBehaviour
 
     private Slider slider;
     private Image imageIcon;
+    private RectTransform imageRectTransform;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +54,7 @@ public class HealthBarPlayer3D : MonoBehaviour
 
     private void InitBarObjects() {
         imageIcon = transform.Find("Bar/Face").GetComponent<Image>();
+        imageRectTransform = imageIcon.GetComponent<RectTransform>();
     }
 
     public void SetHealth(int health)
@@ -62,7 +64,10 @@ public class HealthBarPlayer3D : MonoBehaviour
 
     }
 
-    public void ChangeSprite(Sprite sprite) {
+    public void ChangeSprite(Sprite sprite, bool shouldChangeSize, Vector2 size) {
         imageIcon.sprite = sprite;
+        if(shouldChangeSize) {
+            imageRectTransform.sizeDelta = size;
+        }
     }
 }

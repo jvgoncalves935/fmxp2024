@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class TriggerChangeHealthBarIcon : MonoBehaviour
 {
     [SerializeField] private Sprite sprite;
+    [SerializeField] private bool shouldChangeSize;
+    [SerializeField] private Vector2 size;
 
     private bool triggered = false;
     // Start is called before the first frame update
@@ -27,7 +29,7 @@ public class TriggerChangeHealthBarIcon : MonoBehaviour
     }
 
     private void ChangeImage() {
-        HealthBarPlayer3D.Instance.ChangeSprite(sprite);
+        HealthBarPlayer3D.Instance.ChangeSprite(sprite,shouldChangeSize,size);
     }
 
     private void InitTriggerObjects() {

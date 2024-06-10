@@ -5390,9 +5390,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6459141576397577983, guid: a5a6256000195c9409f79ec7e83f8be4, type: 3}
+      propertyPath: size.x
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 6459141576397577983, guid: a5a6256000195c9409f79ec7e83f8be4, type: 3}
+      propertyPath: size.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6459141576397577983, guid: a5a6256000195c9409f79ec7e83f8be4, type: 3}
       propertyPath: sprite
       value: 
       objectReference: {fileID: 21300000, guid: 13d68c2f7a488dd43aa38e5c072e876a, type: 3}
+    - target: {fileID: 6459141576397577983, guid: a5a6256000195c9409f79ec7e83f8be4, type: 3}
+      propertyPath: shouldChangeSize
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7451946407324613951, guid: a5a6256000195c9409f79ec7e83f8be4, type: 3}
       propertyPath: m_Name
       value: TriggerChangeHealthBarIcon
