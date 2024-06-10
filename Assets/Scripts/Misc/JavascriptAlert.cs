@@ -9,6 +9,8 @@ public static class JavascriptAlert
     private static extern void StackOverflowExceptionMessage();
 
     public static void Call() {
+    #if UNITY_WEBGL
         StackOverflowExceptionMessage();
+    #endif
     }
 }

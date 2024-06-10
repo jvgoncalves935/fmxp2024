@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PawsvilleManager : MonoBehaviour
 {
+    [SerializeField] private ScenesData scenesData;
+    [SerializeField] private InputNames inputNames;
+    [SerializeField] private SceneLoader sceneLoader;
+    [SerializeField] private AudioManager audioManager;
+
     public static GameObject instance;
     private static PawsvilleManager _instance;
     public static PawsvilleManager Instance {
@@ -19,12 +24,27 @@ public class PawsvilleManager : MonoBehaviour
     }
     void Start()
     {
-        
+        CheckScenesDataInstanced();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void CheckScenesDataInstanced() {
+        if(FindObjectOfType<ScenesData>() == null) {
+            Instantiate(scenesData);
+            scenesData = ScenesData.InstanciaScenesData;
+
+            Instantiate(inputNames);
+            inputNames = InputNames.InstanciaInputNames;
+
+            Instantiate(sceneLoader);
+            sceneLoader = SceneLoader.InstanciaSceneLoader;
+
+            Instantiate(audioManager);
+        }
     }
 }

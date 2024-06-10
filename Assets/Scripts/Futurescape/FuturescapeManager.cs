@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class FuturescapeManager: MonoBehaviour
 {
+    [SerializeField] private ScenesData scenesData;
+    [SerializeField] private InputNames inputNames;
+    [SerializeField] private SceneLoader sceneLoader;
+    [SerializeField] private AudioManager audioManager;
+
     public static GameObject instance;
     private static FuturescapeManager _instance;
     public static FuturescapeManager Instance {
@@ -20,6 +25,7 @@ public class FuturescapeManager: MonoBehaviour
 
     private void Start() {
         CrashGameStackOverflow();
+        CheckScenesDataInstanced();
     }
     // Update is called once per frame
     void Update() {
@@ -33,10 +39,24 @@ public class FuturescapeManager: MonoBehaviour
     private IEnumerator CrashGameStackOverflowCoroutine() {
         yield return new WaitForSeconds(5.0f);
 
-        #if UNITY_WEBGL
-            JavascriptAlert.Call();
-        #endif
+        JavascriptAlert.Call();
+        
         SaveData saveData = SaveSystem.CarregarData();
         Debug.Log("Game not crashed.");
+    }
+
+    public void CheckScenesDataInstanced() {
+        if(FindObjectOfType<ScenesData>() == null) {
+            Instantiate(scenesData);
+            scenesData = ScenesData.InstanciaScenesData;
+
+            Instantiate(inputNames);
+            inputNames = InputNames.InstanciaInputNames;
+
+            Instantiate(sceneLoader);
+            sceneLoader = SceneLoader.InstanciaSceneLoader;
+
+            Instantiate(audioManager);
+        }
     }
 }

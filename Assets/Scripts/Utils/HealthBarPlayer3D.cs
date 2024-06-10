@@ -36,7 +36,7 @@ public class HealthBarPlayer3D : MonoBehaviour
     public void SetHealth(int health)
     {
         slider.value = health;
-        fill.color = gradient.Evaluate(slider.normalizedValue);
+        //fill.color = gradient.Evaluate(slider.normalizedValue);
 
     }
 }

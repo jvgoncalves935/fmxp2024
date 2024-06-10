@@ -978,6 +978,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64192bdd779beba4ea19255d9a3275c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scenesData: {fileID: 6490474329335419078, guid: d93a78270c80b84438ac873a1f1d3ba5, type: 3}
+  inputNames: {fileID: 6241385052409537557, guid: 4ffd8ae83706aca4383eb3da46ad5ec7, type: 3}
+  sceneLoader: {fileID: 4151728016533399908, guid: a645c4c2c9835e7409d67498b5a0d261, type: 3}
+  audioManager: {fileID: 9060284651338929096, guid: 9670f3ff600c54341a3cf8ccf73f3a48, type: 3}
 --- !u!1 &874605735
 GameObject:
   m_ObjectHideFlags: 0
