@@ -1275,10 +1275,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d95fd7402dd24444798a48038751b572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenesData: {fileID: 0}
-  inputNames: {fileID: 0}
-  sceneLoader: {fileID: 0}
-  audioManager: {fileID: 0}
+  scenesData: {fileID: 6490474329335419078, guid: d93a78270c80b84438ac873a1f1d3ba5, type: 3}
+  inputNames: {fileID: 6241385052409537557, guid: 4ffd8ae83706aca4383eb3da46ad5ec7, type: 3}
+  sceneLoader: {fileID: 4151728016533399908, guid: a645c4c2c9835e7409d67498b5a0d261, type: 3}
+  audioManager: {fileID: 9060284651338929096, guid: 9670f3ff600c54341a3cf8ccf73f3a48, type: 3}
 --- !u!1 &874605735
 GameObject:
   m_ObjectHideFlags: 0
@@ -1785,7 +1785,7 @@ PrefabInstance:
     - target: {fileID: 8878570133671707430, guid: 2642853500eb7f340899d55273a54407, type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1818179745}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4943827787668642471, guid: 2642853500eb7f340899d55273a54407, type: 3}
@@ -2027,6 +2027,17 @@ ReflectionProbe:
   m_UseOcclusionCulling: 1
   m_Importance: 1
   m_CustomBakedTexture: {fileID: 0}
+--- !u!114 &1818179745 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2051893771730119911, guid: a730ce946c92fbf45993a6a87434fee5, type: 3}
+  m_PrefabInstance: {fileID: 404869885}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97cf6468fec0e3e49a6e079e5ac015b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1872556400
 GameObject:
   m_ObjectHideFlags: 0
