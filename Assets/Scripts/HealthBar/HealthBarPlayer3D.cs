@@ -5,13 +5,31 @@ using UnityEngine.UI;
 
 public class HealthBarPlayer3D : MonoBehaviour
 {
-    private Slider slider;
+    public static GameObject instance;
+    private static HealthBarPlayer3D _instance;
+    public static HealthBarPlayer3D Instance {
+        get {
+            if(_instance == null) {
+                _instance = instance.GetComponent<HealthBarPlayer3D>();
+            }
+            return _instance;
+        }
+    }
+    void Awake() {
+        instance = FindObjectOfType<HealthBarPlayer3D>().gameObject;
+    }
+
+    
     [SerializeField] private Gradient gradient;
     [SerializeField] private Image fill;
+
+    private Slider slider;
+    private Image imageIcon;
     // Start is called before the first frame update
     void Start()
     {
         InitHealthBar();
+        InitBarObjects();
     }
 
     // Update is called once per frame
@@ -33,10 +51,18 @@ public class HealthBarPlayer3D : MonoBehaviour
         SetHealth(maxValue);
     }
 
+    private void InitBarObjects() {
+        imageIcon = transform.Find("Bar/Face").GetComponent<Image>();
+    }
+
     public void SetHealth(int health)
     {
         slider.value = health;
         //fill.color = gradient.Evaluate(slider.normalizedValue);
 
+    }
+
+    public void ChangeSprite(Sprite sprite) {
+        imageIcon.sprite = sprite;
     }
 }
