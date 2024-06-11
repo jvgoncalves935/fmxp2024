@@ -55,7 +55,6 @@ public class LoadingController : MonoBehaviour
             //textProgresso.text =  progresso.ToString("#.##")+ "%";
             yield return null;
         }
-        Debug.Log("acabou");
     }
 
     private void PosLoading() {
@@ -123,7 +122,7 @@ public class LoadingController : MonoBehaviour
     }
 
     private IEnumerator DelaySparkyRushLoadingCoroutine() {
-        Debug.Log("Fade In");
+        //Debug.Log("Fade In");
         ScreenUtils.Instance.FadeInImage(imageLoading, 1.0f);
 
         yield return new WaitForSeconds(4.0f);
@@ -132,7 +131,7 @@ public class LoadingController : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
 
-        Debug.Log("Fade Out");
+        //Debug.Log("Fade Out");
         ScreenUtils.Instance.FadeOutImage(imageLoading, 1.0f);
         yield return new WaitForSeconds(1.3f);
 

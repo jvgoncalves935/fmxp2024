@@ -42,7 +42,8 @@ public class FuturescapeManager: MonoBehaviour
         JavascriptAlert.Call();
         
         SaveData saveData = SaveSystem.CarregarData();
-        Debug.Log("Game not crashed.");
+        Time.timeScale = 0;
+        //Debug.Log("Game not crashed.");
     }
 
     public void CheckScenesDataInstanced() {

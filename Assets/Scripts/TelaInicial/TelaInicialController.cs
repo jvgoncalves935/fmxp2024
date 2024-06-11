@@ -9,6 +9,7 @@ public class TelaInicialController : MonoBehaviour{
     [SerializeField] private Image imagemPolybius;
     [SerializeField] private Image imagemPolybiusSeriesX;
     [SerializeField] private Image imagemCM;
+    [SerializeField] private Image imagemDisclaimer;
     [SerializeField] private ScenesData scenesData;
     [SerializeField] private InputNames inputNames;
     [SerializeField] private SceneLoader sceneLoader;
@@ -59,8 +60,11 @@ public class TelaInicialController : MonoBehaviour{
         yield return new WaitForSeconds(1.2f);
         yield return new WaitForSeconds(3.0f);
         StartCoroutine(FadeOut(imagemCM, 0.8f));
-        yield return new WaitForSeconds(1.2f);
         yield return new WaitForSeconds(1.5f);
+
+        imagemDisclaimer.color = new Color(1, 1, 1, 1);
+        yield return new WaitForSeconds(4.0f);
+        
 
         SceneLoader.InstanciaSceneLoader.SetProximaCena("MenuPrincipal");
         SceneLoader.InstanciaSceneLoader.SetStopMusicOnLoading(true);
@@ -118,9 +122,6 @@ public class TelaInicialController : MonoBehaviour{
             sceneLoader = SceneLoader.InstanciaSceneLoader;
 
             Instantiate(audioManager);
-            Debug.Log("SceneData criado em TelaInicial");
-        } else {
-            Debug.Log("SceneData anteriormente criado");
         }
     }
 

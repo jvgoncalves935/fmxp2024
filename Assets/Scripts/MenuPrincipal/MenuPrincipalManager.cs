@@ -152,7 +152,7 @@ public class MenuPrincipalManager : MonoBehaviour
     private void IniciarStringsLinguagens() {
         textLinguagens.text = stringsOpcoes["OPCOES_LINGUAGEM"];
         textLinguagensSelect.text = stringsOpcoes["OPCOES_LINGUAGEM_" + linguagensSiglas[linguagemAtualIndice].ToUpper()];
-        Debug.Log(linguagensSiglas[linguagemAtualIndice].ToUpper());
+        //Debug.Log(linguagensSiglas[linguagemAtualIndice].ToUpper());
 
         botaoVoltar.transform.GetChild(0).GetComponent<TMP_Text>().text = stringsOpcoes["MENU_VOLTAR"];
         botaoJogar.transform.GetChild(0).GetComponent<TMP_Text>().text = stringsOpcoes["MENU_INICIAR"];
