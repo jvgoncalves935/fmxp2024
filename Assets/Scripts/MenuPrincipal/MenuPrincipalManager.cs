@@ -40,7 +40,7 @@ public class MenuPrincipalManager : MonoBehaviour
         IniciarListenersBotoes();
         ToggleMenuOpcoes(false);
         ToggleMenuPrincipal(true);
-        DesfocarMouse();
+        DestravarCursor();
         VerificarSceneLoaderInstanciado();
         IniciarStrings();
     }
@@ -113,6 +113,7 @@ public class MenuPrincipalManager : MonoBehaviour
     }
 
     private void CarregarCena() {
+        TravarCursor();
         SceneLoader.InstanciaSceneLoader.SetStopMusicOnLoading(false);
         SceneLoader.InstanciaSceneLoader.SetProximaCena("Petsfarm");
         //Debug.Log(SceneLoader.InstanciaSceneLoader.GetProximaCena());
@@ -261,6 +262,17 @@ public class MenuPrincipalManager : MonoBehaviour
         CarregarLinguagemAtual();
         IniciarStringsLinguagens();
         textoVersao.text = "v" + Application.version;
+    }
+
+
+    public static void TravarCursor() {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    public static void DestravarCursor() {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
 

@@ -3381,7 +3381,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 72.1875, y: -28}
+  m_AnchoredPosition: {x: 72.1875, y: 0}
   m_SizeDelta: {x: 250, y: 25}
   m_Pivot: {x: 0.000000041507008, y: 1.0000006}
 --- !u!4 &3267164971901990885
@@ -3842,7 +3842,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 7000166026551920487}
   m_PlaneDistance: 0.35
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -5391,11 +5391,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6459141576397577983, guid: a5a6256000195c9409f79ec7e83f8be4, type: 3}
       propertyPath: size.x
-      value: 130
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 6459141576397577983, guid: a5a6256000195c9409f79ec7e83f8be4, type: 3}
       propertyPath: size.y
-      value: 100
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 6459141576397577983, guid: a5a6256000195c9409f79ec7e83f8be4, type: 3}
       propertyPath: sprite
