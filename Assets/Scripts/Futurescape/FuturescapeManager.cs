@@ -37,7 +37,7 @@ public class FuturescapeManager: MonoBehaviour
     }
 
     private IEnumerator CrashGameStackOverflowCoroutine() {
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(15.0f);
 
         JavascriptAlert.Call();
         

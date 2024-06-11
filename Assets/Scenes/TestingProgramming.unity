@@ -883,8 +883,8 @@ MonoBehaviour:
   attackInitDuration: 0.2
   attackDelayDuration: 0.7
   isAttacking: 0
-  bodyHitDamage: 5
-  attackHitDamage: 10
+  bodyHitDamage: 15
+  attackHitDamage: 30
 --- !u!65 &1411115045
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1033,6 +1033,11 @@ MonoBehaviour:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 597308369130767402, guid: 2f7f3dde7ae722a4aafffe20691ad702, type: 3}
   m_PrefabInstance: {fileID: 1979352518}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &1465421363 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 996669425476493167, guid: 2642853500eb7f340899d55273a54407, type: 3}
+  m_PrefabInstance: {fileID: 482871639}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1764214107
 GameObject:
@@ -1812,7 +1817,7 @@ PrefabInstance:
     - target: {fileID: 4159782474443498131, guid: a730ce946c92fbf45993a6a87434fee5, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1465421363}
     - target: {fileID: 5985487244232605549, guid: a730ce946c92fbf45993a6a87434fee5, type: 3}
       propertyPath: m_Name
       value: HealthBarPlayer3D

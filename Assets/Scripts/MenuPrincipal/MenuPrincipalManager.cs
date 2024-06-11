@@ -113,7 +113,7 @@ public class MenuPrincipalManager : MonoBehaviour
     }
 
     private void CarregarCena() {
-        TravarCursor();
+        //TravarCursor();
         SceneLoader.InstanciaSceneLoader.SetStopMusicOnLoading(false);
         SceneLoader.InstanciaSceneLoader.SetProximaCena("Petsfarm");
         //Debug.Log(SceneLoader.InstanciaSceneLoader.GetProximaCena());

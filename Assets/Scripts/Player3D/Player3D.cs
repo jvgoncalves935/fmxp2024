@@ -14,7 +14,6 @@ public class Player3D : MonoBehaviour
     [SerializeField] private float attackDelayDuration;
 
     [Header("Health Settings")]
-    [SerializeField] private HealthBarPlayer3D healthBar;
     [SerializeField] private int coins = 0;
     [SerializeField] private int playerCurrentHealth = 100;
     [SerializeField] private float invencibilityTime = 1.0f;
@@ -110,7 +109,7 @@ public class Player3D : MonoBehaviour
         playerKilled = false;
         playerCurrentHealth = playerFullHealth;
         isPlayerHit = false;
-        healthBar.SetHealth(playerCurrentHealth);
+        HealthBarPlayer3D.Instance.SetHealth(playerCurrentHealth);
     }
 
     public void PlayerAddHealth(int amount) {
@@ -120,7 +119,7 @@ public class Player3D : MonoBehaviour
             playerCurrentHealth += amount;
         }
 
-        healthBar.SetHealth(playerCurrentHealth);
+        HealthBarPlayer3D.Instance.SetHealth(playerCurrentHealth);
     }
 
     private IEnumerator PlayerAttackCoroutine() {
@@ -155,7 +154,7 @@ public class Player3D : MonoBehaviour
         playerCurrentHealth -= damage;
         NormalizePlayerDamage();
 
-        healthBar.SetHealth(playerCurrentHealth);
+        HealthBarPlayer3D.Instance.SetHealth(playerCurrentHealth);
 
         if(!IsPlayerKilled()) {
             isPlayerHit = true;

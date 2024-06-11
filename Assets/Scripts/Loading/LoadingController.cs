@@ -26,7 +26,7 @@ public class LoadingController : MonoBehaviour
         GetNextScene();
         CheckCurrentLoadingScreen();
         DelaySparkyRushLoading();
-        TravarCursor();
+        //TravarCursor();
     }
 
     private void Update() {
