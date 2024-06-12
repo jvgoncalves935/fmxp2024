@@ -25,6 +25,7 @@ public class MundanescapeManager : MonoBehaviour
     void Start()
     {
         CheckScenesDataInstanced();
+        TravarCursor();
     }
 
     // Update is called once per frame
@@ -46,5 +47,15 @@ public class MundanescapeManager : MonoBehaviour
 
             Instantiate(audioManager);
         }
+    }
+
+    public static void TravarCursor() {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    public static void DestravarCursor() {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

@@ -51,7 +51,7 @@ public class PawsvilleManager : MonoBehaviour
 
     public static void TravarCursor() {
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = true;
+        Cursor.visible = false;
     }
 
     public static void DestravarCursor() {
