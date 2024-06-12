@@ -35,7 +35,7 @@ public class Dialogue001 : Dialogue3D
     private IEnumerator PlayCoroutine() {
         for(int i = 0; i < dialogues.Count; i++) {
             SwitchCamera(cameras[dialogues[i].Camera]);
-            Debug.Log(dialogues[i].Character+": \""+ dialogues[i].Text+"\"");
+            trigger.SetDialogue(dialogues[i].Character,"\"" + dialogues[i].Text + "\"");
             yield return new WaitForSeconds(dialogues[i].Duration);
         }
         trigger.FinishDialogue();

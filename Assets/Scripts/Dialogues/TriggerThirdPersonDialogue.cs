@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class TriggerThirdPersonDialogue : MonoBehaviour
 {
@@ -15,7 +16,10 @@ public class TriggerThirdPersonDialogue : MonoBehaviour
     private Quaternion initialRotationPlayer;
     private bool dialogueStarted = false;
     private bool dialogueFinished = false;
-    
+    private TMP_Text characterNameText;
+    private TMP_Text textArea;
+    private GameObject dialogueObj;
+
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +46,10 @@ public class TriggerThirdPersonDialogue : MonoBehaviour
 
         dialogue = GetComponent<Dialogue3D>();
 
+        dialogueObj = transform.Find("DialoguesTextArea").gameObject;
+        characterNameText = transform.Find("DialoguesTextArea/CharacterNameText").GetComponent<TMP_Text>();
+        textArea = transform.Find("DialoguesTextArea/TextArea").GetComponent<TMP_Text>();
+
     }
 
     private void OnTriggerStay(Collider collider) {
@@ -60,7 +68,7 @@ public class TriggerThirdPersonDialogue : MonoBehaviour
         dialogueStarted = true;
         SetNewPlayerPosition();
         Player3D.Instance.TogglePlayerMovement(false);
-
+        SetDialogue("", "");
         dialogue.Play();
 
     }
@@ -76,9 +84,19 @@ public class TriggerThirdPersonDialogue : MonoBehaviour
 
     public void FinishDialogue() {
         dialogueFinished = true;
-        
+        SetDialogue("", "");
+
         CameraSwitcher.SwitchCamera(cameraPlayer);
         Player3D.Instance.TogglePlayerMovement(true);
         gameObject.SetActive(false);
+    }
+
+    public void SetDialogue(string characterName, string text) {
+        characterNameText.text = characterName;
+        textArea.text = text;
+    }
+
+    private void ToggleDialog() {
+
     }
 }
