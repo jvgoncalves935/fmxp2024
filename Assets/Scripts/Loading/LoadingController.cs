@@ -26,6 +26,9 @@ public class LoadingController : MonoBehaviour
         GetNextScene();
         CheckCurrentLoadingScreen();
         DelaySparkyRushLoading();
+
+        TravarCursor();
+        //Debug.Log(Cursor.lockState);
         //TravarCursor();
     }
 
@@ -33,7 +36,6 @@ public class LoadingController : MonoBehaviour
         if(primeiroUpdate){
             primeiroUpdate = false;
             StartCoroutine(CarregarCena());
-            FocarMouse();
         }
         LogoPulsando();
     }
@@ -66,12 +68,6 @@ public class LoadingController : MonoBehaviour
         float valor = Mathf.Abs(0.5f + Mathf.Sin(Time.time * 2.0f)/2.0f);
         //Debug.Log(valor);
         //imagemEH.color = new Color(1.0f, 1.0f, 1.0f, valor);
-    }
-
-    private void FocarMouse() {
-    #if UNITY_EDITOR || UNITY_STANDALONE_WIN
-        MouseOperations.FocarMouseMultiPlat();
-    #endif
     }
 
     public void VerificarSceneLoaderInstanciado() {
