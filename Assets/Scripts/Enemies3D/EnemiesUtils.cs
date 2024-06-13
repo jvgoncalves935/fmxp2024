@@ -5,6 +5,7 @@ using UnityEngine;
 public static class EnemiesUtils
 {
     public static void ToggleAttackCollider(EnemyAttackCollider3D attackCollider, bool toggle) {
+        Debug.Log(toggle);
         attackCollider.gameObject.SetActive(toggle);
     }
 

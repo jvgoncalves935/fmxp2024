@@ -98,7 +98,7 @@ public class Player3D : MonoBehaviour
         attackCollider = transform.Find("AttackCollider").gameObject.GetComponent<PlayerAttackCollider>();
         controller = GetComponent<ThirdPersonController>();
         animator = GetComponent<Animator>();
-        meshRenderer = transform.Find("Geometry/Armature_Mesh").GetComponent<SkinnedMeshRenderer>();
+        meshRenderer = transform.Find("Geometry/Armature_Mesh/Sparky").GetComponent<SkinnedMeshRenderer>();
     }
 
     public int GetPlayerMaxHealth() {

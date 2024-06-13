@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyRobotDog : Enemy3D
 {
@@ -9,6 +10,13 @@ public class EnemyRobotDog : Enemy3D
     [SerializeField] private bool isAttacking = false;
     [SerializeField] private int bodyHitDamage;
     [SerializeField] private int attackHitDamage;
+
+    private bool killedAnimation = false;
+    private Transform player;
+    private NavMeshAgent agent;
+    private Animator animator;
+
+    private float attackDistance;
 
     private EnemyAttackCollider3D attackCollider;
     // Start is called before the first frame update
@@ -26,30 +34,34 @@ public class EnemyRobotDog : Enemy3D
     void Update()
     {
         CheckPlayerInRange();
+        GetAnimations();
     }
 
     private void RobotDogAttack() {
-        if(!isAttacking) {
+        if(!isAttacking && !killed) {
             StartCoroutine(RobotDogAttackCoroutine());
         }
+    }
+
+    private void GetAnimations() {
+        animator.SetBool("IsAttacking", isAttacking);
+        animator.SetBool("IsKilled", killed);
     }
 
     private IEnumerator RobotDogAttackCoroutine() {
         //Ataque do inimigo
         isAttacking = true;
-        EnemiesUtils.ToggleAttackCollider(attackCollider,isAttacking);
-        ToggleEnemyMovement(!isAttacking);
 
-        yield return new WaitForSeconds(attackInitDuration);
+        yield return new WaitForSeconds(attackDelayDuration);
+        EnemiesUtils.ToggleAttackCollider(attackCollider,isAttacking);
 
         //Collider do ataque desativado
+        yield return new WaitForSeconds(attackInitDuration);
         EnemiesUtils.ToggleAttackCollider(attackCollider, !isAttacking);
-        yield return new WaitForSeconds(attackDelayDuration);
 
+        yield return new WaitForSeconds(attackDelayDuration);
         //Fim animação ataque
         isAttacking = false;
-        ToggleEnemyMovement(!isAttacking);
-
 
         yield return new WaitForSeconds(3.0f);
 
@@ -57,14 +69,14 @@ public class EnemyRobotDog : Enemy3D
 
     private void InitRobotDogObjects() {
         attackCollider = transform.Find("AttackCollider").gameObject.GetComponent<EnemyAttackCollider3D>();
-    }
-
-    private void ToggleEnemyMovement(bool toggle) {
-
+        player = Player3D.Instance.transform;
+        agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
+        attackDistance = agent.stoppingDistance;
     }
 
     private void CheckPlayerInRange() {
-        if(!isAttacking) {
+        if(!isAttacking && Vector3.Distance(transform.position, player.position) <= attackDistance) {
             RobotDogAttack();
         }
     }
@@ -72,5 +84,10 @@ public class EnemyRobotDog : Enemy3D
     public override void SetBaseDamage(int damage) {
         bodyDamage = bodyHitDamage;
         attackDamage = attackHitDamage;
+    }
+
+    public override void Kill() {
+        isAttacking = false;
+        killed = true;
     }
 }

@@ -67,12 +67,16 @@ public class TriggerThirdPersonDialogue : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other) {
-        ToggleInteractText(true);
+    private void OnTriggerEnter(Collider collider) {
+        if(PlayerUtils.IsPlayerBody(collider)) {
+            ToggleInteractText(true);
+        }      
     }
 
-    private void OnTriggerExit(Collider other) {
-        ToggleInteractText(false);
+    private void OnTriggerExit(Collider collider) {
+        if(PlayerUtils.IsPlayerBody(collider)) {
+            ToggleInteractText(false);
+        }
     }
 
     private void InitDialogue() {
