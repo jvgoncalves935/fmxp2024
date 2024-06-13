@@ -8,9 +8,13 @@ public class EnemyRobotDog : Enemy3D
     [SerializeField] private float attackInitDuration;
     [SerializeField] private float attackDuration;
     [SerializeField] private float attackDelayDuration;
-    [SerializeField] private bool isAttacking = false;
+    [SerializeField] private float alertRadius;
+    [SerializeField] private Transform patrolRadiusCenter;
+    [SerializeField] private float patrolRadius;
     [SerializeField] private int bodyHitDamage;
     [SerializeField] private int attackHitDamage;
+
+    private bool isAttacking = false;
 
     private bool killedAnimation = false;
     private Transform player;
@@ -36,6 +40,18 @@ public class EnemyRobotDog : Enemy3D
     {
         CheckPlayerInRange();
         GetAnimations();
+    }
+
+    public float GetAlertRadius() {
+        return alertRadius;
+    }
+
+    public Vector3 GetPatrolRadiusPosition() {
+        return patrolRadiusCenter.position;
+    }
+
+    public float GetPatrolRadius() {
+        return patrolRadius;
     }
 
     private void RobotDogAttack() {
