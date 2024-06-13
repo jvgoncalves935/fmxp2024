@@ -20,6 +20,9 @@ public class TriggerThirdPersonDialogue : MonoBehaviour
     private TMP_Text textArea;
     private GameObject dialogueObj;
 
+    private GameObject interactTextObj;
+    private bool interactTextEnabled = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +40,9 @@ public class TriggerThirdPersonDialogue : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = false;
         Transform initialPositionPlayerTransform = transform.parent.transform.Find("InitialPositionPlayer");
         initialPositionPlayerTransform.GetComponent<MeshRenderer>().enabled = false;
+
+        interactTextObj = transform.parent.transform.Find("InteractText").gameObject;
+        ToggleInteractText(false);
 
         initialPositionPlayer = initialPositionPlayerTransform.position;
         initialRotationPlayer = initialPositionPlayerTransform.rotation;
@@ -61,11 +67,20 @@ public class TriggerThirdPersonDialogue : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other) {
+        ToggleInteractText(true);
+    }
+
+    private void OnTriggerExit(Collider other) {
+        ToggleInteractText(false);
+    }
+
     private void InitDialogue() {
         if(dialogueStarted) {
             return;
         }
 
+        ToggleInteractText(false);
         dialogueStarted = true;
         SetNewPlayerPosition();
         Player3D.Instance.TogglePlayerMovement(false);
@@ -102,5 +117,9 @@ public class TriggerThirdPersonDialogue : MonoBehaviour
 
     private void ToggleDialog(bool toggle) {
         dialogueObj.SetActive(toggle);
+    }
+
+    private void ToggleInteractText(bool toggle) {
+        interactTextObj.SetActive(toggle);
     }
 }
