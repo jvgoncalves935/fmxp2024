@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ScreenUtils: MonoBehaviour{
     public static GameObject instance;
@@ -24,6 +25,15 @@ public class ScreenUtils: MonoBehaviour{
     public void FadeOutImage(Image image, float duration) {
         StartCoroutine(FadeOutImageCoroutine(image, duration));
     }
+
+    public void FadeInText(TMP_Text text, float duration) {
+        StartCoroutine(FadeInTextCoroutine(text, duration));
+    }
+
+    public void FadeOutText(TMP_Text text, float duration) {
+        StartCoroutine(FadeOutTextCoroutine(text, duration));
+    }
+
     public IEnumerator FadeInImageCoroutine(Image image, float duration) {
         float time;
         image.color = new Color(1, 1, 1, 0);
@@ -42,5 +52,25 @@ public class ScreenUtils: MonoBehaviour{
             yield return null;
         }
         image.color = new Color(1, 1, 1, 0);
+    }
+
+    public IEnumerator FadeInTextCoroutine(TMP_Text text, float duration) {
+        float time;
+        text.color = new Color(1, 1, 1, 0);
+        for(time = 0.0f;time <= duration;time += Time.deltaTime) {
+            text.color = Color.Lerp(new Color(1, 1, 1, 0), new Color(1, 1, 1, 1), time / duration);
+            yield return null;
+        }
+        text.color = new Color(1, 1, 1, 1);
+    }
+
+    public IEnumerator FadeOutTextCoroutine(TMP_Text text, float duration) {
+        float time;
+        text.color = new Color(1, 1, 1, 1);
+        for(time = duration;time >= 0.0f;time -= Time.deltaTime) {
+            text.color = Color.Lerp(new Color(1, 1, 1, 0), new Color(1, 1, 1, 1), time / duration);
+            yield return null;
+        }
+        text.color = new Color(1, 1, 1, 0);
     }
 }
