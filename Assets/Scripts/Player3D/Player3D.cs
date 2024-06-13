@@ -140,11 +140,11 @@ public class Player3D : MonoBehaviour
 
     }
 
-    private void ToggleAttackCollider(bool toggle) {
+    public void ToggleAttackCollider(bool toggle) {
         attackCollider.gameObject.SetActive(toggle);
     }
 
-    private void TogglePlayerMovement(bool toggle) {
+    public void TogglePlayerMovement(bool toggle) {
         controller.enabled = toggle;
     }
     public void PlayerDamage(int damage) {
