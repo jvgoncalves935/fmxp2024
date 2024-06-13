@@ -8,8 +8,8 @@ using TMPro;
 public class TriggerThirdPersonDialogue : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera cameraPlayer;
-    [SerializeField] private bool interactButtonPressed = false;
     
+    private bool interactButtonPressed = false;
     private Dialogue3D dialogue;
     private PlayerControls3D playerControls;
     private Vector3 initialPositionPlayer;
@@ -35,7 +35,7 @@ public class TriggerThirdPersonDialogue : MonoBehaviour
 
     private void InitTriggerObjects() {
         GetComponent<MeshRenderer>().enabled = false;
-        Transform initialPositionPlayerTransform = transform.Find("InitialPositionPlayer");
+        Transform initialPositionPlayerTransform = transform.parent.transform.Find("InitialPositionPlayer");
         initialPositionPlayerTransform.GetComponent<MeshRenderer>().enabled = false;
 
         initialPositionPlayer = initialPositionPlayerTransform.position;
@@ -46,10 +46,11 @@ public class TriggerThirdPersonDialogue : MonoBehaviour
 
         dialogue = GetComponent<Dialogue3D>();
 
-        dialogueObj = transform.Find("DialoguesTextArea").gameObject;
-        characterNameText = transform.Find("DialoguesTextArea/CharacterNameText").GetComponent<TMP_Text>();
-        textArea = transform.Find("DialoguesTextArea/TextArea").GetComponent<TMP_Text>();
+        dialogueObj = transform.parent.transform.Find("DialoguesTextArea").gameObject;
+        characterNameText = transform.parent.transform.Find("DialoguesTextArea/CharacterNameText").GetComponent<TMP_Text>();
+        textArea = transform.parent.transform.Find("DialoguesTextArea/TextArea").GetComponent<TMP_Text>();
 
+        ToggleDialog(false);
     }
 
     private void OnTriggerStay(Collider collider) {
@@ -68,6 +69,8 @@ public class TriggerThirdPersonDialogue : MonoBehaviour
         dialogueStarted = true;
         SetNewPlayerPosition();
         Player3D.Instance.TogglePlayerMovement(false);
+
+        ToggleDialog(true);
         SetDialogue("", "");
         dialogue.Play();
 
@@ -85,6 +88,7 @@ public class TriggerThirdPersonDialogue : MonoBehaviour
     public void FinishDialogue() {
         dialogueFinished = true;
         SetDialogue("", "");
+        ToggleDialog(false);
 
         CameraSwitcher.SwitchCamera(cameraPlayer);
         Player3D.Instance.TogglePlayerMovement(true);
@@ -96,7 +100,7 @@ public class TriggerThirdPersonDialogue : MonoBehaviour
         textArea.text = text;
     }
 
-    private void ToggleDialog() {
-
+    private void ToggleDialog(bool toggle) {
+        dialogueObj.SetActive(toggle);
     }
 }
