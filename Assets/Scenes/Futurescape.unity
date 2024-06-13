@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.286203, g: 0.10485526, b: 0.10444308, a: 1}
+  m_IndirectSpecularColor: {r: 0.2828797, g: 0.10700632, b: 0.106338345, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -426,6 +426,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712868803}
   m_CullTransparentMesh: 1
+--- !u!4 &900258792 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5451514854954385038, guid: 2642853500eb7f340899d55273a54407, type: 3}
+  m_PrefabInstance: {fileID: 1111783921}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &965540135
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,15 +933,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996669425476493160, guid: 2642853500eb7f340899d55273a54407, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.86
+      value: -15.809999
       objectReference: {fileID: 0}
     - target: {fileID: 996669425476493160, guid: 2642853500eb7f340899d55273a54407, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 41.795
+      value: 41.505
       objectReference: {fileID: 0}
     - target: {fileID: 996669425476493160, guid: 2642853500eb7f340899d55273a54407, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.09
+      value: -9.52
       objectReference: {fileID: 0}
     - target: {fileID: 996669425476493160, guid: 2642853500eb7f340899d55273a54407, type: 3}
       propertyPath: m_LocalRotation.w
@@ -972,15 +977,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4407071457845614332, guid: 2642853500eb7f340899d55273a54407, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.86
+      value: -15.809999
       objectReference: {fileID: 0}
     - target: {fileID: 4407071457845614332, guid: 2642853500eb7f340899d55273a54407, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 41.795
+      value: 41.505
       objectReference: {fileID: 0}
     - target: {fileID: 4407071457845614332, guid: 2642853500eb7f340899d55273a54407, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.09
+      value: -9.52
       objectReference: {fileID: 0}
     - target: {fileID: 4407071457845614332, guid: 2642853500eb7f340899d55273a54407, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1009,11 +1014,23 @@ PrefabInstance:
     - target: {fileID: 4407071457845614333, guid: 2642853500eb7f340899d55273a54407, type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 1672091956}
+      objectReference: {fileID: 900258792}
     - target: {fileID: 4407071457845614333, guid: 2642853500eb7f340899d55273a54407, type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 1672091956}
+      objectReference: {fileID: 900258792}
+    - target: {fileID: 5426684210370629985, guid: 2642853500eb7f340899d55273a54407, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426684210370629985, guid: 2642853500eb7f340899d55273a54407, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 40.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426684210370629985, guid: 2642853500eb7f340899d55273a54407, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.52
+      objectReference: {fileID: 0}
     - target: {fileID: 7379320687101694304, guid: 2642853500eb7f340899d55273a54407, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1641,11 +1658,6 @@ MonoBehaviour:
   CameraRadius: 0.2
   DampingIntoCollision: 0
   DampingFromCollision: 2
---- !u!4 &1672091956 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1839228904808330431, guid: 2642853500eb7f340899d55273a54407, type: 3}
-  m_PrefabInstance: {fileID: 1111783921}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1696145689
 GameObject:
   m_ObjectHideFlags: 0
