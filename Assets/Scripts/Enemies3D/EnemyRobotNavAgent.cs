@@ -36,13 +36,14 @@ public class EnemyRobotNavAgent : MonoBehaviour
             isPatrolling = false;
             agent.SetDestination(player.position);
         } else {
-
-            
-            isPatrolling = !(PointDistance(player) <= patrolRadius);
-            
+                     
 
             if(!isPatrolling) {
                 isPatrolling = true;
+
+                if(PointDistance(player) <= patrolRadius) {
+
+                }
                 if(RandomPoint(patrolRadiusCenter, patrolRadius, out selectedRandomPointPatrol)){
                     Debug.DrawRay(selectedRandomPointPatrol, Vector3.up, Color.blue, 1.0f);
                     agent.SetDestination(selectedRandomPointPatrol);
