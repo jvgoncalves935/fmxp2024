@@ -369,7 +369,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184695269576681979}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 0da02ed8e4d44534dae61d36dfc88084, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 0b4f774557e833e4bbe5889838560721, type: 3}
   m_Controller: {fileID: 9100000, guid: 40db3173a05ae3242b1c182a09b0a183, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
@@ -2734,6 +2734,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b4f774557e833e4bbe5889838560721, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6781878663276406807, guid: 0b4f774557e833e4bbe5889838560721, type: 3}
+      propertyPath: m_Name
+      value: Sparky
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b4f774557e833e4bbe5889838560721, type: 3}
       propertyPath: m_Name

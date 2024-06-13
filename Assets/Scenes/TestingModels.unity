@@ -1540,10 +1540,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -15.736
       objectReference: {fileID: 0}
-    - target: {fileID: 2479004554504915941, guid: 2642853500eb7f340899d55273a54407, type: 3}
-      propertyPath: m_Avatar
-      value: 
-      objectReference: {fileID: 9000000, guid: 0b4f774557e833e4bbe5889838560721, type: 3}
     - target: {fileID: 3938107100255896780, guid: 2642853500eb7f340899d55273a54407, type: 3}
       propertyPath: m_Layer
       value: 0

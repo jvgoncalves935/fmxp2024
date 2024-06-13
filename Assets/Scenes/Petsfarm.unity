@@ -1529,6 +1529,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3549103967395746660, guid: 2642853500eb7f340899d55273a54407, type: 3}
+      propertyPath: m_Name
+      value: Sparky
+      objectReference: {fileID: 0}
     - target: {fileID: 4270186337245405954, guid: 2642853500eb7f340899d55273a54407, type: 3}
       propertyPath: m_Name
       value: PlayerSettings
