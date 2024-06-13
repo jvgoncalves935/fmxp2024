@@ -95,7 +95,7 @@ public class Player3D : MonoBehaviour
     }
 
     private void InitPlayerObjects() {
-        attackCollider = transform.Find("AttackCollider").gameObject.GetComponent<PlayerAttackCollider>();
+        attackCollider = transform.Find("AttackCollider").GetComponent<PlayerAttackCollider>();
         controller = GetComponent<ThirdPersonController>();
         animator = GetComponent<Animator>();
         meshRenderer = transform.Find("Geometry/Armature_Mesh/Sparky").GetComponent<SkinnedMeshRenderer>();
@@ -148,7 +148,9 @@ public class Player3D : MonoBehaviour
         controller.enabled = toggle;
     }
     public void PlayerDamage(int damage) {
-        StartCoroutine(PlayerDamageCoroutine(damage));
+        if(!isPlayerHit) {
+            StartCoroutine(PlayerDamageCoroutine(damage));
+        }
     }
     private IEnumerator PlayerDamageCoroutine(int damage) {
         playerCurrentHealth -= damage;

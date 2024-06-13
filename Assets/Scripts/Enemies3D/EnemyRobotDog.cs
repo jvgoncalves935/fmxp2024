@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class EnemyRobotDog : Enemy3D
 {
     [SerializeField] private float attackInitDuration;
+    [SerializeField] private float attackDuration;
     [SerializeField] private float attackDelayDuration;
     [SerializeField] private bool isAttacking = false;
     [SerializeField] private int bodyHitDamage;
@@ -51,20 +52,17 @@ public class EnemyRobotDog : Enemy3D
     private IEnumerator RobotDogAttackCoroutine() {
         //Ataque do inimigo
         isAttacking = true;
-
         yield return new WaitForSeconds(attackDelayDuration);
-        EnemiesUtils.ToggleAttackCollider(attackCollider,isAttacking);
 
         //Collider do ataque desativado
-        yield return new WaitForSeconds(attackInitDuration);
-        EnemiesUtils.ToggleAttackCollider(attackCollider, !isAttacking);
+        EnemiesUtils.ToggleAttackCollider(attackCollider,isAttacking);
+        yield return new WaitForSeconds(attackDuration);
 
-        yield return new WaitForSeconds(attackDelayDuration);
         //Fim animação ataque
+        EnemiesUtils.ToggleAttackCollider(attackCollider, !isAttacking);
+        yield return new WaitForSeconds(attackDelayDuration);
+        
         isAttacking = false;
-
-        yield return new WaitForSeconds(3.0f);
-
     }
 
     private void InitRobotDogObjects() {

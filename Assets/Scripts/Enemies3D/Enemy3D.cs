@@ -51,8 +51,8 @@ public class Enemy3D : MonoBehaviour, IDamageable, IEnemyStats
 
     }
 
-    private void OnCollisionEnter(Collision collision) {
-        if(EnemiesUtils.IsEnemyBody(collision) && !Player3D.Instance.IsPlayerHit()) {
+    private void OnTriggerEnter(Collider collider) {
+        if(PlayerUtils.IsPlayerBody(collider) && !Player3D.Instance.IsPlayerHit()) {
             DamagePlayer(bodyDamage);
         }
     }
