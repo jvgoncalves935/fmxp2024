@@ -66,7 +66,7 @@ public class MenuPrincipalManager : MonoBehaviour
             Instantiate(sceneLoader);
             Instantiate(audioManager);
             Instantiate(scenesData);
-            MusicaInicio();
+            //MusicaInicio();
             //DontDestroyOnLoad(sceneLoader);
             //Debug.Log("SceneData criado em EventHorizon");
         } else {

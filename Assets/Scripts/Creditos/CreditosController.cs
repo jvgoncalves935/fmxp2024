@@ -22,10 +22,10 @@ public class CreditosController : MonoBehaviour
         VerificarSceneLoaderInstanciado();
         botaoSair.onClick.AddListener(OnButtonSairClick);
         DesfocarMouse();
-        MusicaInicio();
-        CarregarStrings();
-        CarregarStringsCommon();
-        AplicarStrings();
+        //MusicaInicio();
+        //CarregarStrings();
+        //CarregarStringsCommon();
+        //AplicarStrings();
     }
 
     // Update is called once per frame
