@@ -4589,6 +4589,10 @@ PrefabInstance:
       propertyPath: cameraPlayer
       value: 
       objectReference: {fileID: 115689482}
+    - target: {fileID: 2246778323933374769, guid: 9f8f3cd8c5a32f64fb1a5608b1febeef, type: 3}
+      propertyPath: text
+      value: I must find Sweetie's airship. It should be around somewhere...
+      objectReference: {fileID: 0}
     - target: {fileID: 2876199591395968144, guid: 9f8f3cd8c5a32f64fb1a5608b1febeef, type: 3}
       propertyPath: m_LocalScale.z
       value: 41.33646
