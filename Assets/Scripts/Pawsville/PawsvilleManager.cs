@@ -9,6 +9,9 @@ public class PawsvilleManager : MonoBehaviour
     [SerializeField] private SceneLoader sceneLoader;
     [SerializeField] private AudioManager audioManager;
 
+    [SerializeField] private AudioSource audioSourcePeople;
+    [SerializeField] private AudioSource audioSourceWierd;
+
     public static GameObject instance;
     private static PawsvilleManager _instance;
     public static PawsvilleManager Instance {
@@ -26,6 +29,7 @@ public class PawsvilleManager : MonoBehaviour
     {
         CheckScenesDataInstanced();
         TravarCursor();
+        PlayMusicPeople();
     }
 
     // Update is called once per frame
@@ -57,5 +61,21 @@ public class PawsvilleManager : MonoBehaviour
     public static void DestravarCursor() {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+    }
+
+    public void PlayMusicPeople() {
+        audioSourcePeople.Play();
+    }
+
+    public void StopMusicPeople() {
+        audioSourcePeople.Stop();
+    }
+
+    public void PlayMusicWierd() {
+        audioSourceWierd.Play();
+    }
+
+    public void StopMusicWierd() {
+        audioSourceWierd.Stop();
     }
 }
