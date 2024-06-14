@@ -8,9 +8,10 @@ public class Enemy3D : MonoBehaviour, IDamageable, IEnemyStats
     protected int damage;
     protected int bodyDamage;
     protected int attackDamage;
+
     // Start is called before the first frame update
     void Start() {
-
+        
     }
 
     // Update is called once per frame

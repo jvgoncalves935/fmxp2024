@@ -110,6 +110,16 @@ public class Player3D : MonoBehaviour
         playerCurrentHealth = playerFullHealth;
         isPlayerHit = false;
         HealthBarPlayer3D.Instance.SetHealth(playerCurrentHealth);
+        meshRenderer.enabled = true;
+        controller.enabled = true;
+
+        RestartPlayerPositionCheckpoint();
+    }
+
+    private void RestartPlayerPositionCheckpoint() {
+        Checkpoint3D checkpoint = Checkpoint3DManager.Instance.GetCurrentCheckpoint();
+        transform.position = checkpoint.GetCheckpointPosition();
+        transform.rotation = checkpoint.GetCheckpointRotation();
     }
 
     public void PlayerAddHealth(int amount) {
@@ -165,8 +175,8 @@ public class Player3D : MonoBehaviour
             isPlayerHit = false;
         } else {
             KillPlayer();
-            yield return new WaitForSeconds(3.0f);
-            ResetScene.InstanciaResetScene.Reset();
+            yield return new WaitForSeconds(1.5f);
+            RestartPlayer();
         }
 
     }
@@ -204,6 +214,8 @@ public class Player3D : MonoBehaviour
         playerKilled = true;
         isPlayerHit = true;
         playerCurrentHealth = 0;
+        meshRenderer.enabled = false;
+        controller.enabled = false;
     }
 
 }

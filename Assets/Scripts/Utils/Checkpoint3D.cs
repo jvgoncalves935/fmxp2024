@@ -5,6 +5,7 @@ using UnityEngine;
 public class Checkpoint3D : MonoBehaviour
 {
     [SerializeField] private Vector3 checkpointPosition;
+    private Quaternion checkpointRotation;
     private bool checkpointTriggered = false;
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class Checkpoint3D : MonoBehaviour
 
     void SetCheckpointPosition() {
         checkpointPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        checkpointRotation = transform.rotation;
     }
 
     private void DisableMeshRenderer() {
@@ -29,6 +31,10 @@ public class Checkpoint3D : MonoBehaviour
 
     public Vector3 GetCheckpointPosition() {
         return checkpointPosition;
+    }
+
+    public Quaternion GetCheckpointRotation() {
+        return checkpointRotation;
     }
 
     private void OnTriggerEnter(Collider collider) {

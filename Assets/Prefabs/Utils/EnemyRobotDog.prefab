@@ -127,7 +127,8 @@ MonoBehaviour:
   attackInitDuration: 0.7
   attackDuration: 0.15
   attackDelayDuration: 0.7
-  isAttacking: 0
+  alertRadius: 8
+  patrolRadius: 20
   bodyHitDamage: 15
   attackHitDamage: 30
 --- !u!54 &7811421137466063034

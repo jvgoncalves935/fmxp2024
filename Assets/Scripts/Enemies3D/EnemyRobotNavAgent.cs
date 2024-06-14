@@ -40,7 +40,7 @@ public class EnemyRobotNavAgent : MonoBehaviour
 
             if(!isPatrolling) {
                 isPatrolling = true;
-
+                /*
                 if(PointDistance(player) <= patrolRadius) {
 
                 }
@@ -48,12 +48,11 @@ public class EnemyRobotNavAgent : MonoBehaviour
                     Debug.DrawRay(selectedRandomPointPatrol, Vector3.up, Color.blue, 1.0f);
                     agent.SetDestination(selectedRandomPointPatrol);
                 }
+                */
 
             }
 
         }
-        
-        //transform.LookAt(player.position);
     }
 
     private float PointDistance(Transform point) {

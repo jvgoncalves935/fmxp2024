@@ -9,7 +9,7 @@ public class EnemyRobotDog : Enemy3D
     [SerializeField] private float attackDuration;
     [SerializeField] private float attackDelayDuration;
     [SerializeField] private float alertRadius;
-    [SerializeField] private Transform patrolRadiusCenter;
+    private Transform patrolRadiusCenter;
     [SerializeField] private float patrolRadius;
     [SerializeField] private int bodyHitDamage;
     [SerializeField] private int attackHitDamage;
@@ -27,6 +27,7 @@ public class EnemyRobotDog : Enemy3D
     // Start is called before the first frame update
     private void Awake() {
         SetBaseDamage(attackHitDamage);
+        patrolRadiusCenter = transform;
     }
 
     void Start()
@@ -103,5 +104,19 @@ public class EnemyRobotDog : Enemy3D
     public override void Kill() {
         isAttacking = false;
         killed = true;
+        KilledAnimation();
+    }
+
+    private void KilledAnimation() {
+        //StartCoroutine(KilledAnimationCoroutine());
+        gameObject.SetActive(false);
+    }
+
+    private IEnumerator KilledAnimationCoroutine() {
+        for(int i = 0; i < 64; i++) {
+            yield return new WaitForSeconds(0.8f);
+        }
+
+        
     }
 }
