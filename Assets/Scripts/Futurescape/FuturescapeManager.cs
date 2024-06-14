@@ -18,6 +18,7 @@ public class FuturescapeManager: MonoBehaviour
     [SerializeField] private AudioSource audio03;
 
     private int totalCoins = 89;
+    [SerializeField] private EndingCutsceneDialog endingCutsceneDialog;
     private CharacterController characterController;
     private ThirdPersonController thirdPersonController;
 
@@ -40,13 +41,39 @@ public class FuturescapeManager: MonoBehaviour
         characterController =  Player3D.Instance.gameObject.GetComponent<CharacterController>();
         thirdPersonController = Player3D.Instance.gameObject.GetComponent<ThirdPersonController>();
 
-        CrashGameStackOverflow();
+        EndingCutscene();
+        
         CheckScenesDataInstanced();
 
         TravarCursor();
     }
     // Update is called once per frame
     void Update() {
+
+    }
+
+    private void EndingCutscene() {
+        StartCoroutine(EndingCutsceneCoroutine());
+    }
+
+    private IEnumerator EndingCutsceneCoroutine() {
+        thirdPersonController.enabled = false;
+        characterController.enabled = false;
+
+        endingCutsceneDialog.InitImage(3.0f);
+        yield return new WaitForSeconds(3.0f);
+
+        yield return new WaitForSeconds(13.0f);
+
+        endingCutsceneDialog.EndImage(5.0f);
+        yield return new WaitForSeconds(5.0f);
+
+        yield return new WaitForSeconds(3.1f);
+
+        endingCutsceneDialog.DisableCutscene();
+        thirdPersonController.enabled = true;
+        characterController.enabled = true;
+        CrashGameStackOverflow();
 
     }
 

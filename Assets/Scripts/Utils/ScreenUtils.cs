@@ -34,7 +34,7 @@ public class ScreenUtils: MonoBehaviour{
         StartCoroutine(FadeOutTextCoroutine(text, duration));
     }
 
-    public IEnumerator FadeInImageCoroutine(Image image, float duration) {
+    private IEnumerator FadeInImageCoroutine(Image image, float duration) {
         float time;
         image.color = new Color(1, 1, 1, 0);
         for(time = 0.0f;time <= duration; time += Time.deltaTime) {
@@ -44,7 +44,7 @@ public class ScreenUtils: MonoBehaviour{
         image.color = new Color(1, 1, 1, 1);
     }
 
-    public IEnumerator FadeOutImageCoroutine(Image image, float duration) {
+    private IEnumerator FadeOutImageCoroutine(Image image, float duration) {
         float time;
         image.color = new Color(1, 1, 1, 1);
         for(time = duration;time >= 0.0f;time -= Time.deltaTime) {
@@ -54,7 +54,7 @@ public class ScreenUtils: MonoBehaviour{
         image.color = new Color(1, 1, 1, 0);
     }
 
-    public IEnumerator FadeInTextCoroutine(TMP_Text text, float duration) {
+    private IEnumerator FadeInTextCoroutine(TMP_Text text, float duration) {
         float time;
         text.color = new Color(1, 1, 1, 0);
         for(time = 0.0f;time <= duration;time += Time.deltaTime) {
@@ -64,7 +64,7 @@ public class ScreenUtils: MonoBehaviour{
         text.color = new Color(1, 1, 1, 1);
     }
 
-    public IEnumerator FadeOutTextCoroutine(TMP_Text text, float duration) {
+    private IEnumerator FadeOutTextCoroutine(TMP_Text text, float duration) {
         float time;
         text.color = new Color(1, 1, 1, 1);
         for(time = duration;time >= 0.0f;time -= Time.deltaTime) {
