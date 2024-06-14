@@ -704,8 +704,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraPlayer: {fileID: 0}
-  isDynamicTextOriented: 1
-  isActivatedOnCollision: 1
+  isDynamicTextOriented: 0
+  isActivatedOnCollision: 0
 --- !u!114 &4002652010630794016
 MonoBehaviour:
   m_ObjectHideFlags: 0

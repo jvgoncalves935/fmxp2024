@@ -98,8 +98,6 @@ public class TriggerThirdPersonDialogue : MonoBehaviour
         if(!isActivatedOnCollision) {
             SetNewPlayerPosition();
         }
-        
-        Debug.Log("teste");
 
         if(!isDynamicTextOriented) {
 
