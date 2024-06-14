@@ -18,7 +18,6 @@ public class PlayerAttackCollider : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider) {
         if(EnemiesUtils.IsEnemyBody(collider)) {
-            Debug.Log(collider.name);
             collider.GetComponent<Enemy3D>().Kill();
         }
     }
