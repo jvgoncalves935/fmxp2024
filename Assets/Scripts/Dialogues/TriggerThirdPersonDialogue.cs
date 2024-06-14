@@ -73,9 +73,9 @@ public class TriggerThirdPersonDialogue : MonoBehaviour
     private void OnTriggerEnter(Collider collider) {
         if(PlayerUtils.IsPlayerBody(collider)) {
             if(isDynamicTextOriented) {
-                ToggleInteractText(true);
-            } else {
                 InitDialogue();
+            } else {
+                ToggleInteractText(true);
             }
         }      
     }
