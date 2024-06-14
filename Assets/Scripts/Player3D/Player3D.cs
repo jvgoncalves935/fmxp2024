@@ -23,6 +23,7 @@ public class Player3D : MonoBehaviour
     private int playerFullHealth;
     private bool gamePaused;
     private float originalMoveSpeed;
+    private bool attackToggled = true;
 
     private PlayerAttackCollider attackCollider;
     private ThirdPersonController controller;
@@ -48,6 +49,7 @@ public class Player3D : MonoBehaviour
     {
         InitPlayerObjects();
         ToggleAttackCollider(false);
+        AuthorizeAttack(true);
     }
 
     private void OnEnable() {
@@ -87,7 +89,7 @@ public class Player3D : MonoBehaviour
     }
 
     private void PlayerAttack(InputAction.CallbackContext callback) {
-        if(!isAttacking && grounded) {
+        if(!isAttacking && grounded && attackToggled) {
             StartCoroutine(PlayerAttackCoroutine());
         }
     }
@@ -158,12 +160,13 @@ public class Player3D : MonoBehaviour
         attackCollider.gameObject.SetActive(toggle);
     }
 
+    public void AuthorizeAttack(bool toggle) {
+        attackToggled = toggle;
+    }
+
     public void TogglePlayerMovement(bool toggle) {
-        characterController.SimpleMove(Vector3.zero);
         controller.enabled = toggle;
-
-        
-
+        characterController.enabled = toggle;
     }
     public void PlayerDamage(int damage) {
         if(!isPlayerHit) {
@@ -224,6 +227,10 @@ public class Player3D : MonoBehaviour
         playerCurrentHealth = 0;
         meshRenderer.enabled = false;
         controller.enabled = false;
+    }
+
+    public void AddCoin() {
+        coins++;
     }
 
 }

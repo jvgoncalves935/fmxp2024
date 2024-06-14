@@ -94,11 +94,19 @@ public class TriggerThirdPersonDialogue : MonoBehaviour
         ToggleInteractText(false);
         dialogueStarted = true;
 
-        SetNewPlayerPosition();
+
+        if(!isActivatedOnCollision) {
+            SetNewPlayerPosition();
+        }
+        
+        Debug.Log("teste");
 
         if(!isDynamicTextOriented) {
-            
+
             Player3D.Instance.TogglePlayerMovement(false);
+            Player3D.Instance.ToggleAttackCollider(false);
+            Player3D.Instance.AuthorizeAttack(false);
+            //characterController.Move(Vector3.zero * Time.deltaTime);
         }
 
         ToggleDialog(true);
@@ -123,6 +131,8 @@ public class TriggerThirdPersonDialogue : MonoBehaviour
 
         CameraSwitcher.SwitchCamera(cameraPlayer);
         Player3D.Instance.TogglePlayerMovement(true);
+        Player3D.Instance.ToggleAttackCollider(true);
+        Player3D.Instance.AuthorizeAttack(true);
         gameObject.SetActive(false);
     }
 
