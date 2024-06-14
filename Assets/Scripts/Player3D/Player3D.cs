@@ -159,9 +159,10 @@ public class Player3D : MonoBehaviour
     }
 
     public void TogglePlayerMovement(bool toggle) {
+        characterController.SimpleMove(Vector3.zero);
         controller.enabled = toggle;
 
-        characterController.SimpleMove(Vector3.zero);
+        
 
     }
     public void PlayerDamage(int damage) {
