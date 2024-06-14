@@ -6745,6 +6745,10 @@ PrefabInstance:
       propertyPath: cameraPlayer
       value: 
       objectReference: {fileID: 990321480}
+    - target: {fileID: 8818459906326678499, guid: b9606678a7c4381479fd8d75a1b97e6e, type: 3}
+      propertyPath: isActivatedOnCollision
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

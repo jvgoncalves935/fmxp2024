@@ -22,9 +22,11 @@ public class Player3D : MonoBehaviour
     private bool playerKilled = false;
     private int playerFullHealth;
     private bool gamePaused;
+    private float originalMoveSpeed;
 
     private PlayerAttackCollider attackCollider;
     private ThirdPersonController controller;
+    private CharacterController characterController;
     private Animator animator;
     private SkinnedMeshRenderer meshRenderer;
 
@@ -99,6 +101,8 @@ public class Player3D : MonoBehaviour
         controller = GetComponent<ThirdPersonController>();
         animator = GetComponent<Animator>();
         meshRenderer = transform.Find("Geometry/Armature_Mesh/Sparky").GetComponent<SkinnedMeshRenderer>();
+        characterController = GetComponent<CharacterController>();
+        originalMoveSpeed = controller.MoveSpeed;
     }
 
     public int GetPlayerMaxHealth() {
@@ -156,6 +160,9 @@ public class Player3D : MonoBehaviour
 
     public void TogglePlayerMovement(bool toggle) {
         controller.enabled = toggle;
+
+        characterController.SimpleMove(Vector3.zero);
+
     }
     public void PlayerDamage(int damage) {
         if(!isPlayerHit) {

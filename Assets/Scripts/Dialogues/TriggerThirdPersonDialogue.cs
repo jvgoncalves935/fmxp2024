@@ -94,8 +94,10 @@ public class TriggerThirdPersonDialogue : MonoBehaviour
         ToggleInteractText(false);
         dialogueStarted = true;
 
+        SetNewPlayerPosition();
+
         if(!isDynamicTextOriented) {
-            SetNewPlayerPosition();
+            
             Player3D.Instance.TogglePlayerMovement(false);
         }
 
