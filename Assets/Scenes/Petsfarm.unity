@@ -1934,12 +1934,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 996669425476493160, guid: 2642853500eb7f340899d55273a54407, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.88671
+      objectReference: {fileID: 0}
+    - target: {fileID: 996669425476493160, guid: 2642853500eb7f340899d55273a54407, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.176352
+      objectReference: {fileID: 0}
+    - target: {fileID: 996669425476493160, guid: 2642853500eb7f340899d55273a54407, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -30.484068
+      value: -14.344091
       objectReference: {fileID: 0}
     - target: {fileID: 996669425476493167, guid: 2642853500eb7f340899d55273a54407, type: 3}
       propertyPath: far clip plane
-      value: 100
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 3549103967395746660, guid: 2642853500eb7f340899d55273a54407, type: 3}
       propertyPath: m_Name
@@ -2210,7 +2218,7 @@ PrefabInstance:
     - target: {fileID: 6120518251417223658, guid: b9606678a7c4381479fd8d75a1b97e6e, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 647829217}
     - target: {fileID: 6866952008179757122, guid: b9606678a7c4381479fd8d75a1b97e6e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.204
@@ -2561,7 +2569,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &1533400852
 ParticleSystemRenderer:
   serializedVersion: 6

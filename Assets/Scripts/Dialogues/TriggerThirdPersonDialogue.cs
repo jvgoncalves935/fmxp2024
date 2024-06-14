@@ -8,6 +8,9 @@ using TMPro;
 public class TriggerThirdPersonDialogue : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera cameraPlayer;
+    [SerializeField] private bool isDynamicTextOriented;
+    [SerializeField] private bool isActivatedOnCollision;
+
     
     private bool interactButtonPressed = false;
     private Dialogue3D dialogue;
@@ -69,7 +72,11 @@ public class TriggerThirdPersonDialogue : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider) {
         if(PlayerUtils.IsPlayerBody(collider)) {
-            ToggleInteractText(true);
+            if(isDynamicTextOriented) {
+                ToggleInteractText(true);
+            } else {
+                InitDialogue();
+            }
         }      
     }
 
@@ -86,8 +93,11 @@ public class TriggerThirdPersonDialogue : MonoBehaviour
 
         ToggleInteractText(false);
         dialogueStarted = true;
-        SetNewPlayerPosition();
-        Player3D.Instance.TogglePlayerMovement(false);
+
+        if(!isDynamicTextOriented) {
+            SetNewPlayerPosition();
+            Player3D.Instance.TogglePlayerMovement(false);
+        }
 
         ToggleDialog(true);
         SetDialogue("", "");

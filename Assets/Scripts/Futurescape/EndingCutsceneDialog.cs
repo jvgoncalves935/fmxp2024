@@ -9,9 +9,12 @@ public class EndingCutsceneDialog : MonoBehaviour
     [SerializeField] private Image image;
     private ScreenUtils screenUtils;
     // Start is called before the first frame update
+    private void Awake() {
+        screenUtils = GetComponent<ScreenUtils>();
+    }
     void Start()
     {
-        screenUtils = GetComponent<ScreenUtils>();
+        
     }
 
     // Update is called once per frame
