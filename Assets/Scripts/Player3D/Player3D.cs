@@ -17,7 +17,9 @@ public class Player3D : MonoBehaviour
     [SerializeField] private int coins = 0;
     [SerializeField] private int playerCurrentHealth = 100;
     [SerializeField] private float invencibilityTime = 1.0f;
-   
+    [SerializeField] private ParticleSystem particleSystem;
+    [SerializeField] private Transform particleRoot;
+
     private bool isPlayerHit = false;
     private bool playerKilled = false;
     private int playerFullHealth;
@@ -30,6 +32,9 @@ public class Player3D : MonoBehaviour
     private CharacterController characterController;
     private Animator animator;
     private SkinnedMeshRenderer meshRenderer;
+    private AudioSource audioSourceBark;
+    
+    
 
     public static GameObject instance;
     private static Player3D _instance;
@@ -105,6 +110,7 @@ public class Player3D : MonoBehaviour
         meshRenderer = transform.Find("Geometry/Armature_Mesh/Sparky").GetComponent<SkinnedMeshRenderer>();
         characterController = GetComponent<CharacterController>();
         originalMoveSpeed = controller.MoveSpeed;
+        audioSourceBark = transform.Find("AudioSourceBark").GetComponent<AudioSource>();
     }
 
     public int GetPlayerMaxHealth() {
@@ -138,9 +144,18 @@ public class Player3D : MonoBehaviour
         HealthBarPlayer3D.Instance.SetHealth(playerCurrentHealth);
     }
 
+    private void AudioBark() {
+        audioSourceBark.Play();
+    }
+
     private IEnumerator PlayerAttackCoroutine() {
         //Ataque do Player
         isAttacking = true;
+
+
+        PlayParticles();
+        AudioBark();
+
         ToggleAttackCollider(isAttacking);
         TogglePlayerMovement(!isAttacking);
 
@@ -154,6 +169,13 @@ public class Player3D : MonoBehaviour
         isAttacking = false;
         TogglePlayerMovement(!isAttacking);
 
+    }
+
+    private void PlayParticles() {
+        particleSystem.Stop();
+        particleSystem.transform.position = particleRoot.position;
+        particleSystem.transform.rotation = particleRoot.transform.rotation;
+        particleSystem.Play();
     }
 
     public void ToggleAttackCollider(bool toggle) {
